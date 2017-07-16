@@ -5,7 +5,7 @@ var url = require('url')
 
 var win;
 
-// Method to creaet window :: more changes ::more changes
+// Method to crenaet window :: more changes ::more changes
 // thanks to github
 function createWindow() {
     //console.log(__dirname);
@@ -20,11 +20,16 @@ function createWindow() {
         slashes: true
     }))
 
+    // OPEN DEV TOOLS
+    win.webContents.openDevTools()
 
     // Emitted when the window is closed.
     win.on('closed', function() {
         win = null
     })
 }
+
+  
+
 
 app.on('ready', createWindow)
