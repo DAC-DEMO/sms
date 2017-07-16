@@ -6,6 +6,7 @@ var url = require('url')
 var win;
 
 // Method to creaet window :: more changes ::more changes
+// thanks to github
 function createWindow() {
     //console.log(__dirname);
 
