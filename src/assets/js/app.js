@@ -3,8 +3,7 @@ var app = angular.module("app", ['ngRoute']);
 app.config(function($routeProvider){
 
     $routeProvider.otherwise("/page1");
-
-
+    
     $routeProvider.when("/page1", {
         "templateUrl" : "./views/page1.html",
         "controller" : "page1"
