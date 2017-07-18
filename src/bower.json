@@ -6,7 +6,7 @@
   "description": "",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/DAC-DEMO/sms",
   "ignore": [
     "**/.*",
     "node_modules",

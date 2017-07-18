@@ -18,3 +18,12 @@ body{
     font-weight: bold;
     height: 47px;
 }
+
+.jumbo{
+        background-image: transparent;
+    padding: 30px 15px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #93959d;
+    background: rgba(241, 241, 241, 0);
+}

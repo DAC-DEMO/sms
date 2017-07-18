@@ -2,11 +2,16 @@ var app = angular.module("app", ['ngRoute']);
 
 app.config(function($routeProvider){
 
-    $routeProvider.otherwise("/page1");
+    $routeProvider.otherwise("/login");
+
+      $routeProvider.when("/login", {
+        "templateUrl" : "./views/login.html",
+        "controller" : "login"
+    });
     
-    $routeProvider.when("/page1", {
-        "templateUrl" : "./views/page1.html",
-        "controller" : "page1"
+    $routeProvider.when("/societySelect", {
+        "templateUrl" : "./views/societySelect.html",
+        "controller" : "societySelect"
     });
 
 
