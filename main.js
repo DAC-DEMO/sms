@@ -28,8 +28,4 @@ function createWindow() {
         win = null
     })
 }
-
-  
-
-
 app.on('ready', createWindow)
