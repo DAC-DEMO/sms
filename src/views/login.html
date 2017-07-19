@@ -18,9 +18,12 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#tf-home" class="page-scroll">Home</a></li>
-                    <li><a href="#tf-about" class="page-scroll">About</a></li>
-                    <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
+
+                    <li ng-repeat="item in optionList">
+                        <a href="#tf-home" class="page-scroll">
+                             {{item.title}}   
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -33,20 +36,20 @@
     <div id="tf-home" class="text-center">
         <div class="overlay">
             <div class="content">
-                <h1>Welcome on <strong><span class="color">Housing Society Management System</span></strong></h1>
+                <h1><strong><span class="color">{{data.title}}</span></strong></h1>
 
                 <div class="jumbotron col-sm-offset-4 col-sm-4 jumbo" style="background: rgba(241, 241, 241, 0);">
                     <form class="form-horizontal">
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label"><b>Username</b></label>
                             <div class="col-sm-6">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email" ng-model="user.email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-2 control-label"><b>Password</b></label>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="user.password">
                             </div>
                         </div>
                         <div class="form-group">

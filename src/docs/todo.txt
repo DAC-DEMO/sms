@@ -3,4 +3,9 @@
     >> Put custom library eitehr in Bower/ or seprate folder. (Only custom/user defined js files should
     be there in assests/js folder)
 
+    >> ng-href :: study to change the view.
+    >> ng-model
+    >> ng-repeat
+    >> expression {{}}
+
 
