@@ -1,0 +1,6 @@
+
+2017-07-19
+    >> Put custom library eitehr in Bower/ or seprate folder. (Only custom/user defined js files should
+    be there in assests/js folder)
+
+
