@@ -7,5 +7,3 @@
     >> ng-model
     >> ng-repeat
     >> expression {{}}
-
-

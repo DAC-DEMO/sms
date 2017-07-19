@@ -4,17 +4,18 @@ app.controller("login", function($scope, $location) {
 
     // SOURCE OF DATA FOR PAGE1
     $scope.data = {
-        "title": "Welcome to Society Managment System."
+        "welcome": "Welcome to Society Managment System",
+        "title" : "Society Management System"
     };
 
     $scope.user = {};
 
     $scope.optionList = [{
-        "title": "Homeeee"
+        "title": "Home"
     }, {
-        "title": "About Usss"
+        "title": "About Us"
     }, {
-        "title": "Contactttt"
+        "title": "Contact"
     }];
 
 
