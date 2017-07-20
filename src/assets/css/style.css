@@ -62,14 +62,7 @@ a:focus{
      clear: both;
      height: 0;
      }
-.clearfix { display: inline-block; }
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-ul, ol{
-	padding: 0;
-	webkit-padding: 0;
-	moz-padding: 0;
-}
+
 /* Navigation */
 #tf-menu {
 	padding: 20px;
@@ -414,7 +407,7 @@ ol.type li a.active { font-weight: 700; }
 }
 .hover-bg:hover .hover-text>h4{
 	opacity: 1;
-    -webkit-backface-visibility:hidden;
+    
     -webkit-transform: translateY(0);
             transform: translateY(0);
 }
@@ -426,7 +419,7 @@ ol.type li a.active { font-weight: 700; }
 }
 .hover-bg:hover .hover-text>i{
 	opacity: 1;
-    -webkit-backface-visibility:hidden;
+    
    -webkit-transform: translateY(100%);
             transform: translateY(100%);
 }
@@ -569,3 +562,4 @@ nav#footer p{
 	background: #FCAC45;
 	border-color: #FCAC45;
 	color: #ffffff;
+}
