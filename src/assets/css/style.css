@@ -542,9 +542,9 @@ button.btn.tf-btn.btn-default {
 }
 /* Footer */
 nav#footer{
-	background: #222222;
+	background:#222222;
 	color: #ffffff;
-	padding: 20px 0 15px 0;
+	padding: 10px 0 4px 0;
 }
 nav#footer .fnav{ vertical-align: middle;}
 ul.footer-social li{
