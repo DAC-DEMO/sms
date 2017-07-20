@@ -20,7 +20,7 @@
         </div>
         <div class="row">
 
-            <div class="col-sm-5 jumbotron" >
+            <div class="col-sm-5 jumbotron">
                 <div>
                     <form>
                         <div class="form-group">
@@ -29,26 +29,47 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputRegistraion">{{data.regnNo}}</label>
-                            <input type="text" class="form-control"placeholder="Registration No." ng-model="socFormData.regnNo">
+                            <input type="text" class="form-control" placeholder="Registration No." ng-model="socFormData.regnNo">
                         </div>
                         <div class="form-group">
                             <label for="comment">{{data.address}}</label>
                             <textarea class="form-control" rows="2" id="comment" ng-model="socFormData.address"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-success" ng-click="db();">Submit</button>
+                        <button type="submit" class="btn btn-success" ng-click="dbInsertSociety();">Submit</button>
                     </form>
                 </div>
             </div>
 
-            <div class="col-sm-offset-1 col-sm-6 jumbotron">
+            <div class="col-sm-offset-1 col-sm-6" style="margin-top: -5%;">
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="width: 100%;">Select Society
+                    <button class="btn btn-primary" type="button" data-toggle="dropdown" style="width: 100%;" ng-click="toggle();">Select Society
                         <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSdfsfsfsdfsdfssdfsdfsdfdsdfsdfsdfsdfsdsfS</a></li>
-                        <li><a href="#">JavaScript</a></li>
-                    </ul>
+                    <table class="table table-hover table-bordered" ng-hide="custom">
+                            <thead>
+                                <tr>
+                                    <th>Serial.No</th>
+                                    <th>Society Name</th>
+                                    <th>Regi.No</th>
+                                    <th>Address</th>
+                                    <th>Select</th>
+                                </tr>
+                            </thead>
+                            
+                                <tbody>
+                                    <tr ng-repeat="item in societyData">
+                                        <td>{{item.sid}}</td>
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.regno}}</td>
+                                        <td>{{item.address}}</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm" ng-click="openMasterAndTransactionPage(this);">
+                                                <span>Select</span>
+                                                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                    </table>
                 </div>
             </div>
         </div>
