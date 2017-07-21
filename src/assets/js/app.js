@@ -31,7 +31,7 @@ app.config(function($routeProvider) {
     });
 
     $routeProvider.when("/memberReceipt", {
-        "templateUrl": "./views/transactionl/memberReceipt.html",
+        "templateUrl": "./views/transaction/memberReceipt.html",
         "controller": "memberReceipt"
     });
 

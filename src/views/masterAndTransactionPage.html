@@ -9,19 +9,19 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" style="width: 320px;">Master</a>
                             <ul class="dropdown-menu">
                                 <li><a role="button" ng-click="addMemPage();">Add Member</a></li>
-                                <li><a role="button">Modify Memeber</a></li>
-                                <li><a role="button">Member list</a></li>
-                                <li><a role="button">Account</a></li>
+                                <li><a role="button" ng-click="ModifyMemPage();">Modify Memeber</a></li>
+                                <li><a role="button" ng-click="MemListPage();">Member list</a></li>
+                                <li><a role="button" ng-click="addSocAccPage();">Add Society Account</a></li>
                             </ul>
                         </li>
 
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" style="width: 320px;">Transaction</a>
                             <ul class="dropdown-menu">
-                                <li><a role="button" ng-click="memberBillReceipt();">Maintenance Bill</a></li>
-                                <li><a role="button">Member Bill Receipt</a></li>
-                                <li><a role="button">Society Voucher</a></li>
-                                <li><a role="button">Society Receipt</a></li>
+                                <li><a role="button" ng-click="memberBillReceiptPage();">Maintenance Bill</a></li>
+                                <li><a role="button" ng-click="memBillReceiptPage();">Member Bill Receipt</a></li>
+                                <li><a role="button" ng-click="socVoucherPage();">Society Voucher</a></li>
+                                <li><a role="button" ng-click="socReceiptPage();">Society Receipt</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -29,17 +29,13 @@
                             <ul class="dropdown-menu">
                                 <li><a role="button">Master Report</a></li>
                                 <li><a role="button">Transaction Report</a></li>
-                                <li><a role="button">Maintenance Report</a>
-                                    <li>
+                                <li><a role="button">Maintenance Report</a><li>
                             </ul>
-                            </li>
+                        </li>
                     </ul>
                 </div>
-                <!--/.row closed-->
             </div>
-            <!--/.nav-collapse -->
         </div>
-        <!--/.container-fluid -->
     </nav>
     <div class="jumbotron">
 
