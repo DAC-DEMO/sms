@@ -1,70 +1,72 @@
 <!DOCTYPE html>
 <html ng-app="app">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Housing Society Management System</title>
+        <title>Housing Society Management System</title>
 
 
-    <script src="./bower_components/jquery/dist/jquery.js"></script>
-    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="./bower_components/jquery/dist/jquery.js"></script>
+        <script src="./bower_components/jquery/dist/jquery.min.js"></script>
 
-    <!-- ANGULAR JS-->
+        <!-- ANGULAR JS-->
 
-    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-
-    <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="./assets/fonts/font-awesome/css/font-awesome.css">
-
-    <!--custom css-->
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+        <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
-    <!--custom-->
-    <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/societySelect.js"></script>
-    <script src="./assets/js/login.js"></script>
-    <script src="./assets/js/masterAndTransactionPage.js"></script>
-    <script src="./assets/js/memberReceipt.js"></script>
+        <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="./assets/fonts/font-awesome/css/font-awesome.css">
 
-</head>
+        <!--custom css-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
 
-<body>
+        <!--custom-->
+        <script src="./assets/js/app.js"></script>
+        <script src="./assets/js/societySelect.js"></script>
+        <script src="./assets/js/login.js"></script>
+        <script src="./assets/js/masterAndTransactionPage.js"></script>
+        <script src="./assets/js/master/addSocietyAccount.js"></script>
+        <script src="./assets/js/master/addMember.js"></script>    
+        <script src="./assets/js/transaction/memberReceipt.js"></script>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Society Management System</a>
+    </head>
+
+
+    <body>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Society Management System</a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div ng-view></div>
+        <div ng-view></div>
 
-    <nav id="footer" class="navbar navbar-fixed-bottom">
-        <div class="container">
-            <div class="pull-left fnav">
-                <p>ALL RIGHTS RESERVED. COPYRIGHT © 2017. Designed and coded by<strong> Spartans_FEB17@CDAC</strong>
+        <nav id="footer" class="navbar navbar-fixed-bottom">
+            <div class="container">
+                <div class="pull-left fnav">
+                    <p>ALL RIGHTS RESERVED. COPYRIGHT © 2017. Designed and coded by<strong> Spartans_FEB17@CDAC</strong>
+                </div>
+                <div class="pull-right fnav">
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="pull-right fnav">
-                <ul class="footer-social">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
-</body>
+    </body>
 
 </html>

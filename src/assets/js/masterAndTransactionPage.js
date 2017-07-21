@@ -6,9 +6,15 @@ app.controller("masterAndTransactionPage", function($scope,$location) {
     $scope.masterAndTransactionPage = { "title" : "Master and Transaction Page" };
 
     $scope.memberBillReceipt = function(){
-
         
         $location.path("/memberReceipt");
 
     };    
+
+    $scope.addMemPage = function(){
+
+         $location.path("/addMember");
+    }
+
+
 });
