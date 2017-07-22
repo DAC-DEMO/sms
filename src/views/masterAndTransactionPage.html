@@ -6,39 +6,41 @@
                     <ul class="nav navbar-nav" style="font-size: large;font-family: fantasy;">
                         <li class="dropdown" style="margin-left:80px;">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" style="width: 320px;">Master</a>
-                             <ul class="dropdown-menu">
-                                <li><a role="button" ng-click="changeTab('addMem');" >Add Member</a></li>
+                            <ul class="dropdown-menu">
+                                <li><a role="button" ng-click="changeTab('addMem');">Add Member</a></li>
                                 <li><a role="button" ng-click="changeTab('updateMem');">Update Memeber</a></li>
                                 <li><a role="button" ng-click="changeTab('M');">Member list</a></li>
                                 <li><a role="button" ng-click="changeTab('addSocAcc');">Add Society Account</a></li>
-                            </ul> 
+                            </ul>
                         </li>
 
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" style="width: 320px;">Transaction</a>
                             <ul class="dropdown-menu">
                                 <li><a role="button" ng-click="changeTab('maintananceBill');">Maintenance Bill</a></li>
-                                <li><a role="button" ng-click="changeTab('memReceipt');" >Member Bill Receipt</a></li>
+                                <li><a role="button" ng-click="changeTab('memReceipt');">Member Bill Receipt</a></li>
                                 <li><a role="button" ng-click="changeTab('socVoucher');">Society Voucher</a></li>
                             </ul>
                         </li>
-                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width: 320px;" ng-if="post.index">Report</a>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width: 320px;"
+                                ng-if="post.index">Report</a>
                             <ul class="dropdown-menu">
                                 <li><a role="button">Master Report</a></li>
                                 <li><a role="button">Transaction Report</a></li>
-                                <li><a role="button">Maintenance Report</a><li>
+                                <li><a role="button">Maintenance Report</a>
+                                    <li>
                             </ul>
-                        </li> 
+                            </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div
+        <div>
+            <center><div style="font-family: initial;color: tomato;font-size: x-large;">GURUDEV SOCIETY</div></center>
     </nav>
-
-    
-     <!--Master pages -->
+</div>
+    <!--Master pages -->
 
 
     <div ng-show="data.defaultTab == 'addMem'">
@@ -66,6 +68,3 @@
     <div ng-show="data.defaultTab == 'socVoucher'">
         <div ng-include="'./views/transaction/socVoucher.html'"></div>
     </div>
-   
-
-</div>
