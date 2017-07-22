@@ -5,30 +5,28 @@ app.controller("masterAndTransactionPage", function($scope,$location) {
     // SOURCE OF DATA FOR PAGE1
     $scope.masterAndTransactionPage = { "title" : "Master and Transaction Page" };
 
-       $scope.addMemPage = function () {
-        $location.path("/addMember");
+    $scope.tabList = [{
+        "value" : "addMem"
+    },{
+        "value" : "addSocAcc"
+    },{
+        "value" : "updateMem"
+    },{
+        "value" : "maintananceBill"
+    },{
+        "value" : "memReceipt"
+    },{
+        "value" : "socVoucher"
     }
+    ];
 
-    $scope.addSocAccPage = function () {
-        $location.path("/addSocietyAccount");
-    }
-
-
-    $scope.updateMemberPage = function () {
-        $location.path("/updateMember");
-    }
-
-
-
-    $scope.memBillReceiptPage = function () {
-        $location.path("/memberReceipt");
+    $scope.data = {
+        "defaultTab" : $scope.tabList[0].value
     };
 
-
-    $scope.socVoucherPage = function () {
-        $location.path("/socVoucher");
-    }
-
+    $scope.changeTab = function(value){
+        $scope.data.defaultTab = value;
+    };
 
 
 });

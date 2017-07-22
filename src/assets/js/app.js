@@ -1,6 +1,6 @@
 var app = angular.module("app", ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(function ($routeProvider) {
 
     $routeProvider.otherwise("/login");
 
@@ -25,8 +25,8 @@ app.config(function($routeProvider) {
         "controller": "masterAndTransactionPage"
     });
 
-    
-// ............MASTER FOLDER.............
+
+    // ............MASTER FOLDER.............
 
     $routeProvider.when("/addMember", {
         "templateUrl": "./views/master/addMember.html",
@@ -38,7 +38,7 @@ app.config(function($routeProvider) {
         "controller": "updateMember"
     });
 
-// ............TRANSACTION FOLDER.............
+    // ............TRANSACTION FOLDER.............
 
     $routeProvider.when("/memberReceipt", {
         "templateUrl": "./views/transaction/memberReceipt.html",
@@ -49,5 +49,10 @@ app.config(function($routeProvider) {
         "templateUrl": "./views/transaction/socVoucher.html",
         "controller": "socVoucher"
     });
-    
+
+     $routeProvider.when("/maintenanceBill", {
+        "templateUrl": "./views/transaction/maintenanceBill.html",
+        "controller": "maintenanceBill"
+    });
+
 });

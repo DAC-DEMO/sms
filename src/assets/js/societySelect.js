@@ -5,11 +5,12 @@ var mysql = require('mysql');
 app.controller("societySelect", function ($scope,$location) {
 
     // SOURCE OF DATA FOR PAGE1
-    $scope.data = {
+    $scope.formLabelData = {
         "title": "Society Select",
         "name": "Name of Society",
         "regnNo": "Registration No.",
-        "address": "Address"
+        "address": "Address",
+        "toggleTable" : true
     };
 
     $scope.socFormData = {};
@@ -37,15 +38,16 @@ app.controller("societySelect", function ($scope,$location) {
             }
             else {
                 console.log(data);
+                $scope.socFormData = {};
                 $scope.dbGetSocietyNames();
-
+                
             }
             connection.end();
         });
 
     };
 
-    $scope.societyData = {};
+    $scope.societyData = [];
 
     $scope.dbGetSocietyNames = function(){
         var connection = mysql.createConnection(config);
@@ -66,14 +68,8 @@ app.controller("societySelect", function ($scope,$location) {
             connection.end();
         });
 
-    }
-
+    };
     $scope.dbGetSocietyNames();
-
-    $scope.custom = false;
-    $scope.toggle = function(){
-         $scope.custom = $scope.custom === false ? true: false;
-    }
 
     $scope.openMasterAndTransactionPage = function(obj){
       $location.path("/masterAndTransactionPage");

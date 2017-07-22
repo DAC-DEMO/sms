@@ -1,6 +1,4 @@
 <div class="container" style="margin-top: 2%;">
-
-  
     <nav class="navbar navbar-default" style="margin-top: 30px;">
         <div class="container-fluid">
             <div id="navbar" class="navbar-collapse collapse">
@@ -8,34 +6,66 @@
                     <ul class="nav navbar-nav" style="font-size: large;font-family: fantasy;">
                         <li class="dropdown" style="margin-left:80px;">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" style="width: 320px;">Master</a>
-                            <ul class="dropdown-menu">
-                                <li><a role="button" ng-click="addMemPage();">Add Member</a></li>
-                                <li><a role="button" ng-click="updateMemberPage();">Modify Memeber</a></li>
-                                <li><a role="button" ng-click="memListPage();">Member list</a></li>
-                                <li><a role="button" ng-click="addSocAccPage();">Add Society Account</a></li>
-                            </ul>
+                             <ul class="dropdown-menu">
+                                <li><a role="button" ng-click="changeTab('addMem');" >Add Member</a></li>
+                                <li><a role="button" ng-click="changeTab('updateMem');">Update Memeber</a></li>
+                                <li><a role="button" ng-click="changeTab('M');">Member list</a></li>
+                                <li><a role="button" ng-click="changeTab('addSocAcc');">Add Society Account</a></li>
+                            </ul> 
                         </li>
 
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" style="width: 320px;">Transaction</a>
                             <ul class="dropdown-menu">
-                                <li><a role="button" ng-click="memberBillPage();">Maintenance Bill</a></li>
-                                <li><a role="button" ng-click="memBillReceiptPage();">Member Bill Receipt</a></li>
-                                <li><a role="button" ng-click="socVoucherPage();">Society Voucher</a></li>
-                                <li><a role="button" ng-click="socReceiptPage();">Society Receipt</a></li>
+                                <li><a role="button" ng-click="changeTab('maintananceBill');">Maintenance Bill</a></li>
+                                <li><a role="button" ng-click="changeTab('memReceipt');" >Member Bill Receipt</a></li>
+                                <li><a role="button" ng-click="changeTab('socVoucher');">Society Voucher</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width: 320px;">Report</a>
+                         <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width: 320px;" ng-if="post.index">Report</a>
                             <ul class="dropdown-menu">
                                 <li><a role="button">Master Report</a></li>
                                 <li><a role="button">Transaction Report</a></li>
                                 <li><a role="button">Maintenance Report</a><li>
                             </ul>
-                        </li>
+                        </li> 
                     </ul>
                 </div>
             </div>
         </div>
+        <div
     </nav>
+
+    
+     <!--Master pages -->
+
+
+    <div ng-show="data.defaultTab == 'addMem'">
+        <div ng-include="'./views/master/addMember.html'"></div>
+    </div>
+
+    <div ng-show="data.defaultTab == 'updateMem'">
+        <div ng-include="'./views/master/updateMember.html'"></div>
+    </div>
+
+    <div ng-show="data.defaultTab == 'addSocAcc'">
+        <div ng-include="'./views/master/addSocietyAccount.html'"></div>
+    </div>
+
+    <!--Transaction pages -->
+
+    <div ng-show="data.defaultTab == 'maintananceBill'">
+        <div ng-include="'./views/transaction/maintenanceBill.html'"></div>
+    </div>
+
+    <div ng-show="data.defaultTab == 'memReceipt'">
+        <div ng-include="'./views/transaction/memberReceipt.html'"></div>
+    </div>
+
+    <div ng-show="data.defaultTab == 'socVoucher'">
+        <div ng-include="'./views/transaction/socVoucher.html'"></div>
+    </div>
+   
+
 </div>
