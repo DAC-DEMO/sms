@@ -6,7 +6,8 @@
     >> ng-href :: study to change the view.
     >> ng-model
     >> ng-repeat
+
     >> expression {{}}
     >> Sqlite/MySQL.
-
+    >> expression {{}}
 

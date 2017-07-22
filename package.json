@@ -1,19 +1,20 @@
 {
-    "name": "team5",
-    "version": "1.0.0",
-    "description": "",
-    "main": "main.js",
-    "scripts": {
-        "dev": "electron .",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "angular": "^1.6.5",
-        "angular-route": "^1.6.5",
-        "bootstrap-select": "^1.12.3",
-        "bower": "^1.8.0",
-        "electron": "^1.6.11"
-    }
+  "name": "team5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-route": "^1.6.5",
+    "bootstrap-select": "^1.12.3",
+    "bower": "^1.8.0",
+    "electron": "^1.6.11",
+    "mysql": "^2.13.0"
+  }
 }

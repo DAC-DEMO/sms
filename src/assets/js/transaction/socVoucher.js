@@ -1,9 +1,9 @@
 var app = angular.module("app");
 
-app.controller("masterAndTransactionPage", function($scope,$location) {
+app.controller("socVoucher", function($scope,$location) {
 
     // SOURCE OF DATA FOR PAGE1
-    $scope.masterAndTransactionPage = { "title" : "Master and Transaction Page" };
+    $scope.socVoucher = { "title" : "Society Voucher Page" };
 
     $scope.memberBillReceipt = function(){
         

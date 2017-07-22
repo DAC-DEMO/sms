@@ -1,122 +1,73 @@
 <!DOCTYPE html>
 <html ng-app="app">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <title>Housing Society Management System</title>
-
-    <!-- .......................Login.html........................ -->
-    <!-- .......................Login.html........................ -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
+        <title>Housing Society Management System</title>
 
 
-    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+        <script src="./bower_components/jquery/dist/jquery.js"></script>
+        <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- ANGULAR JS-->
+
+        <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
+        <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="./bower_components/bootstrap/js/dropdown.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="./assets/fonts/font-awesome/css/font-awesome.css">
 
-    <!-- Bootstrap-->
-    <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="./assets/fonts/font-awesome/css/font-awesome.css">
-
-    <!-- Slider
-            ================================================== -->
-    <link href="./assets/css/owl.carousel.css" rel="stylesheet" media="screen">
-    <link href="./assets/css/owl.theme.css" rel="stylesheet" media="screen">
-
-    <!-- Stylesheet
-            ================================================== -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/responsive.css">
-
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
-
-    <script type="text/javascript" src="./assets/js/modernizr.custom.js"></script>
-
-    <!-- Javascripts
-            ================================================== -->
-    <script src="./assets/js/main.js"></script>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./assets/js/jquery.1.11.1.js"></script>
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-
-    <script type="text/javascript" src="./assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="./assets/js/SmoothScroll.js"></script>
-    <script type="text/javascript" src="./assets/js/jquery.isotope.js"></script>
-
-    <script src="./assets/js/owl.carousel.js"></script>
-
-    <!--custom-->
-    <script src="./assets/js/app.js"></script>
-    <script src="./assets/js/societySelect.js"></script>
-    <script src="./assets/js/login.js"></script>
-
-</head>
+        <!--custom css-->
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
 
-</head>
+        <!--custom-->
+        <script src="./assets/js/app.js"></script>
+        <script src="./assets/js/societySelect.js"></script>
+        <script src="./assets/js/login.js"></script>
+        <script src="./assets/js/masterAndTransactionPage.js"></script>
+        <script src="./assets/js/master/addSocietyAccount.js"></script>
+        <script src="./assets/js/master/addMember.js"></script>    
+        <script src="./assets/js/transaction/memberReceipt.js"></script>
+        <script src="./assets/js/master/updateMember.js"></script>
+
+    </head>
 
 
-<body>
+    <body>
 
-    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                <a class="navbar-brand" href="index.html">Society Management System</a>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Society Management System</a>
+                </div>
             </div>
+        </nav>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+        <div ng-view></div>
 
-            <!--
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#tf-home" class="page-scroll">Home</a></li>
-                    <li><a href="#tf-about" class="page-scroll">About</a></li>
-                    <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
-                </ul>
-            </div> -->
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+        <nav id="footer" class="navbar navbar-fixed-bottom">
+            <div class="container">
+                <div class="pull-left fnav">
+                    <p>ALL RIGHTS RESERVED. COPYRIGHT © 2017. Designed and coded by<strong> Spartans_FEB17@CDAC</strong>
+                </div>
+                <div class="pull-right fnav">
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    <!-- <div>
-        <a href="#!societySelect">societySelect</a>
-        <a href="#!page2">PAGE2</a>
-        <a href="#!page3">PAGE3</a>
-        <a href="#!page4">PAGE4</a>
-    </div> -->
-
-    <div ng-view></div>
-
-</body>
+    </body>
 
 </html>

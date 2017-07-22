@@ -15,13 +15,8 @@ app.config(function($routeProvider) {
     });
 
     $routeProvider.when("/addSocietyAccount", {
-        "templateUrl": "./views/addSocietyAccount.html",
+        "templateUrl": "./views/master/addSocietyAccount.html",
         "controller": "addSocietyAccount"
-    });
-
-    $routeProvider.when("/addMember", {
-        "templateUrl": "./views/addMember.html",
-        "controller": "addMember"
     });
 
 
@@ -30,27 +25,29 @@ app.config(function($routeProvider) {
         "controller": "masterAndTransactionPage"
     });
 
+    
+// ............MASTER FOLDER.............
+
+    $routeProvider.when("/addMember", {
+        "templateUrl": "./views/master/addMember.html",
+        "controller": "addMember"
+    });
+
+    $routeProvider.when("/updateMember", {
+        "templateUrl": "./views/master/updateMember.html",
+        "controller": "updateMember"
+    });
+
+// ............TRANSACTION FOLDER.............
+
     $routeProvider.when("/memberReceipt", {
-        "templateUrl": "./views/memberReceipt.html",
+        "templateUrl": "./views/transaction/memberReceipt.html",
         "controller": "memberReceipt"
     });
 
-    $routeProvider.when("/page2", {
-        "templateUrl": "./views/page2.html",
-        "controller": "page2"
+    $routeProvider.when("/socVoucher", {
+        "templateUrl": "./views/transaction/socVoucher.html",
+        "controller": "socVoucher"
     });
-
-
-    $routeProvider.when("/page3", {
-        "templateUrl": "./views/page3.html",
-        "controller": "page3"
-    });
-
-    $routeProvider.when("/page4", {
-        "templateUrl": "./views/page4.html",
-        "controller": "page4"
-    });
-
-
-
+    
 });
