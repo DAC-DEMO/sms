@@ -9,8 +9,8 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" style="width: 320px;">Master</a>
                             <ul class="dropdown-menu">
                                 <li><a role="button" ng-click="addMemPage();">Add Member</a></li>
-                                <li><a role="button" ng-click="ModifyMemPage();">Modify Memeber</a></li>
-                                <li><a role="button" ng-click="MemListPage();">Member list</a></li>
+                                <li><a role="button" ng-click="updateMemberPage();">Modify Memeber</a></li>
+                                <li><a role="button" ng-click="memListPage();">Member list</a></li>
                                 <li><a role="button" ng-click="addSocAccPage();">Add Society Account</a></li>
                             </ul>
                         </li>
@@ -18,7 +18,7 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" style="width: 320px;">Transaction</a>
                             <ul class="dropdown-menu">
-                                <li><a role="button" ng-click="memberBillReceiptPage();">Maintenance Bill</a></li>
+                                <li><a role="button" ng-click="memberBillPage();">Maintenance Bill</a></li>
                                 <li><a role="button" ng-click="memBillReceiptPage();">Member Bill Receipt</a></li>
                                 <li><a role="button" ng-click="socVoucherPage();">Society Voucher</a></li>
                                 <li><a role="button" ng-click="socReceiptPage();">Society Receipt</a></li>
@@ -29,84 +29,56 @@
                             <ul class="dropdown-menu">
                                 <li><a role="button">Master Report</a></li>
                                 <li><a role="button">Transaction Report</a></li>
-                                <li><a role="button">Maintenance Report</a>
-                                    <li>
+                                <li><a role="button">Maintenance Report</a><li>
                             </ul>
-                            </li>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
-    <div class="jumbotron">
 
-    </div>
-    <table class="table table-striped  table-hover jumbotron container-fluid body-content">
+    <table class="table   table-hover jumbotron">
         <tbody>
-            <tr class="info">
-                <td>NAME:</td>
+            <tr>
+                <td>RECEPT NO:</td>
                 <td><input type="text"></td>
-                <td>BILL NO:</td>
-                <td><input type="text"></td>
-            </tr>
-            <tr class="info">
-                <td>PARTICULAR:</td>
-                <td><textarea rows="2" style="width: 212px;"></textarea>
-                    <td>Sq Ft:</td>
-                    <td><input type="text"></td>
-            </tr>
-            <tr class="info">
                 <td>DATE:</td>
-                <td><input type="date"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>FLAT NO:</td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td>Received with Thanks from </td>
+                <td><input type="number"></td>
+            </tr>
+
+            <tr>
+                <td>A Sum of Rs. </td>
+                <td><input type="number"></td>
+            </tr>
+
+            <tr>
+                <td>By Cheque No. </td>
+                <td><input type="text"></td>
+            </tr>
+
+            <tr>
+                <td>RS.</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
                 <td></td>
-                <td><button class="btn btn-primary btn-bg" ng-click="getMemberBillData();">Generate Bill</button></td>
-            </tr>
-
-        </tbody>
-    </table>
-
-    <table class="table table-striped  table-hover jumbotron">
-        <tbody>
-            <tr class="success">
-                <td>Nature of Charges</td>
-                <td>Amount</td>
-            </tr>
-            <tr class="success">
-                <td>Service Charge</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr class="success">
-                <td>Electric Charge</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr class="success">
-                <td>Sinking Fund</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr class="success">
-                <td>Repair & Maintainance </td>
-                <td><input type="number"></td>
-            </tr>
-            <tr class="success">
-                <td>Water Charges</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr class="success">
-                <td>Non Occupancy Charges</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr class="success">
-                <td>Interest</td>
-                <td><input type="number"></td>
-            </tr>
-
-            <tr class="success">
-                <td>Total</td>
-                <td><input type="number"></td>
+                <td>
+                    <button class="btn btn-primary btn-lg">Generate</button>
+                </td>
             </tr>
         </tbody>
     </table>
-    <div>
-        <label>RUPEE:</label>
+    <div style="margin-left: 800px;margin-top: 104px;font-size: x-large;">
+        <label>Secretary / Treasurer</label>
     </div>
 </div>
