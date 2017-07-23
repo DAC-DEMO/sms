@@ -6,8 +6,8 @@
     "configurations": [{
             "type": "node",
             "request": "launch",
-            "name": "RUN DML",
-            "program": "${workspaceRoot}/src/backend/config/dml.js"
+            "name": "RUN APp DATA",
+            "program": "${workspaceRoot}/src/backend/config/app-data.js"
         },
         {
             "type": "node",

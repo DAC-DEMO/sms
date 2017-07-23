@@ -1,7 +1,9 @@
 const { app, BrowserWindow } = require('electron');
 
-var path = require('path')
-var url = require('url')
+var path = require('path');
+var url = require('url');
+
+var init = require("./src/backend/config/init");
 
 var win;
 
@@ -9,6 +11,9 @@ var win;
 // thanks to github
 function createWindow() {
     //console.log(__dirname);
+    console.log(init);
+    
+    init.init();
 
     // Create the browser window.
     win = new BrowserWindow({ width: 1000, height: 1000 })

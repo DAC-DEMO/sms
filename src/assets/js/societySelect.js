@@ -1,8 +1,10 @@
 var app = angular.module("app");
 var mysql = require('mysql');
+var module1 = require('./backend/module1');
 
 //societySelect
 app.controller("societySelect", function ($scope,$location) {
+    console.log(module1);
 
     // SOURCE OF DATA FOR PAGE1
     $scope.formLabelData = {
@@ -39,7 +41,6 @@ app.controller("societySelect", function ($scope,$location) {
             else {
                 console.log(data);
                 $scope.socFormData = {};
-                $scope.dbGetSocietyNames();
                 
             }
             connection.end();
@@ -63,14 +64,12 @@ app.controller("societySelect", function ($scope,$location) {
             else {
                 console.log(data);
                 $scope.societyData = data;
-
             }
             connection.end();
         });
 
     };
 
-    $scope.dbGetSocietyNames();
 
     $scope.openMasterAndTransactionPage = function(){
       $location.path("/masterAndTransactionPage");
