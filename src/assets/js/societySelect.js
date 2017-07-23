@@ -72,7 +72,7 @@ app.controller("societySelect", function ($scope,$location) {
 
     $scope.dbGetSocietyNames();
 
-    $scope.openMasterAndTransactionPage = function(obj){
+    $scope.openMasterAndTransactionPage = function(){
       $location.path("/masterAndTransactionPage");
     }
     
