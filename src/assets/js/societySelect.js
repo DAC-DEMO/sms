@@ -2,77 +2,50 @@ var app = angular.module("app");
 var mysql = require('mysql');
 var module1 = require('./backend/module1');
 
-//societySelect
-app.controller("societySelect", function ($scope,$location) {
-    console.log(module1);
+//declared one global object so we can use it in any js file --//
 
-    // SOURCE OF DATA FOR PAGE1
+var societyDetails1 = {};
+
+
+// --- societySelect controller ----//
+app.controller("societySelect", function ($scope, $location) {
+
     $scope.formLabelData = {
         "title": "Society Select",
         "name": "Name of Society",
         "regnNo": "Registration No.",
         "address": "Address",
-        "toggleTable" : true
+        "toggleTable": true
+
     };
 
+    // -- Society data insertion function -- //
     $scope.socFormData = {};
 
-    var config = {
-        "host": "127.0.0.1",
-        "user": "root",
-        "password": "Welcome@123",
-        "database": "laxman"
-    };
-
-
     $scope.dbInsertSociety = function () {
-        var connection = mysql.createConnection(config);
-        connection.connect();
 
-        var sql = `insert into society (name,regno,address) values(?,?,?)`;
+        module1.dbInsertSociety1($scope.socFormData, function (response) {
 
-        var param = [$scope.socFormData.societyName,$scope.socFormData.regnNo,$scope.socFormData.address];
-
-        connection.query(sql, param, function (err, data) {
-
-            if (err) {
-                console.log(err);
-            }
-            else {
-                console.log(data);
-                $scope.socFormData = {};
-                
-            }
-            connection.end();
         });
 
+        $scope.socFormData = {};
     };
 
     $scope.societyData = [];
 
-    $scope.dbGetSocietyNames = function(){
-        var connection = mysql.createConnection(config);
-        connection.connect();
+    $scope.dbGetSocietyNames = function () {
 
-        var sql = `select * from society;`;
+        module1.dbGetSocietyNames1(function (response) {
+            $scope.societyData = response;
 
-        connection.query(sql,function (err, data) {
-
-            if (err) {
-                console.log(err);
-            }
-            else {
-                console.log(data);
-                $scope.societyData = data;
-            }
-            connection.end();
-        });
+        })
 
     };
 
+    $scope.openMasterAndTransactionPage = function (societyDetails) {
 
-    $scope.openMasterAndTransactionPage = function(){
-      $location.path("/masterAndTransactionPage");
-    }
-    
+        societyDetails1 = societyDetails;
+        $location.path("/masterAndTransactionPage");
+
+    };
 });
