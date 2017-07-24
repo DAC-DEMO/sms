@@ -65,9 +65,29 @@ dml.initialize = function () {
     }
 };
 
-module.exports =dml;
-
 //---------------------------------SOCIETY-SELECT------------------
 
+dml.dbInsertSociety = function (socFormData,callback) {
+        var connection = mysql.createConnection(config);
+        connection.connect();
 
+        var sql = `insert into society (name,regno,address) values(?,?,?)`;
 
+        var param = [$scope.socFormData.societyName,$scope.socFormData.regnNo,$scope.socFormData.address];
+
+        connection.query(sql, param, function (err, data) {
+
+            if (err) {
+                console.log(err);
+            }
+            else {
+                console.log(data);
+                $scope.socFormData = {};
+                
+            }
+            connection.end();
+        });
+
+    };
+
+module.exports =dml;
