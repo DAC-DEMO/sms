@@ -9,7 +9,7 @@
                             <ul class="dropdown-menu">
                                 <li><a role="button" ng-click="changeTab('addMem');">Add Member</a></li>
                                 <li><a role="button" ng-click="changeTab('updateMem');">Update Memeber</a></li>
-                                <li><a role="button" ng-click="changeTab('M');">Member list</a></li>
+                                <li><a role="button" ng-click="changeTab('memList');">Member list</a></li>
                                 <li><a role="button" ng-click="changeTab('addSocAcc');">Add Society Account</a></li>
                             </ul>
                         </li>
@@ -53,12 +53,17 @@
         <div ng-include="'./views/master/homepage.html'"></div>
     </div>
 
+
     <div ng-show="data.defaultTab == 'addMem'">
         <div ng-include="'./views/master/addMember.html'"></div>
     </div>
 
     <div ng-show="data.defaultTab == 'updateMem'">
         <div ng-include="'./views/master/updateMember.html'"></div>
+    </div>
+
+    <div ng-show="data.defaultTab == 'memList'">
+        <div ng-include="'./views/master/memberList.html'"></div>
     </div>
 
     <div ng-show="data.defaultTab == 'addSocAcc'">
