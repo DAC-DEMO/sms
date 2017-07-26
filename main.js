@@ -10,7 +10,7 @@ var win;
 // Method to crenaet window :: more changes ::more changes
 // thanks to github
 function createWindow() {
-    //console.log(__dirname);
+    
     console.log(init);
     
     init.init();
