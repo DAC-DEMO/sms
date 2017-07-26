@@ -55,10 +55,50 @@ ref.dbGetSocietyNames1 = function (callback) {
 
 };
 
-//-- store member data into database --//
+//-- add Maintenance Details into database--//
 
-ref.dbInsertMemberData1 = function(){
 
-}
+ref.addMaintenanceDetails1 = function (societyMaintenanceDetails,callback) {
+    var connection = mysql.createConnection(config);
+    connection.connect();
+
+    var sql = `insert into FIXED_MAINTENANCE_CHARGES (MUNICIPLE_TAX,SINKING_FUND,SERVICE_CHARGES,REP_AND_MAINTENANCE,ELECTRIC_CHARGES,WATER_CHARGES,INSURANCE,SID) values(?,?,?,?,?,?,?,?);`;
+
+    var param = [societyMaintenanceDetails.municipal_tax,societyMaintenanceDetails.sinking_fund,societyMaintenanceDetails.service_charges,societyMaintenanceDetails.rep_and_maintenance,societyMaintenanceDetails.electric_charges,societyMaintenanceDetails.water_charges,societyMaintenanceDetails.insurance,societyDetails1.SID];
+
+    connection.query(sql,param,function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+
+};
+
+// //--
+
+// ref.getSocietyMaintenanceDetails1 = function(callback){
+
+//     var connection = mysql.createConnection(config);
+//     connection.connect();
+
+//     var sql = `select * from FIXED_MAINTENANCE_CHARGES where  SID = societyDetails1.SID`;
+
+//     connection.query(sql, function (err, data) {
+
+//         if (err) {
+//             console.log(err);
+//         }
+//         else {
+//             callback(data);
+//         }
+//         connection.end();
+//     });
+// }
+
 
 module.exports = ref;
