@@ -14,7 +14,7 @@ app.controller("masterAndTransactionPage", function ($scope, $location) {
     };
 
     $scope.tabList = {
-        "value": "addMem"
+        "value": "home"
     };
 
     $scope.data = {
