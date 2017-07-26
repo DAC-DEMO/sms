@@ -7,11 +7,7 @@ var ref = {};
 ref.init = function(){
     console.log("KUNDANNNNNN....");
     dml.initialize();
-    //appdata.initialize();
-    
+    appdata.initialize();
 }
 
 module.exports = ref;
-
-
-

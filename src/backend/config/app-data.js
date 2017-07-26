@@ -10,10 +10,10 @@ var config = {
 
 appdata.dataList = [{
         "table": "SOCIETY",
-        "sql": `INSERT INTO SOCIETY (NAME,REGNO,ADDRESS) VALUES('Shree','10315','Kalyan East');`
+        "sql": `INSERT INTO SOCIETY (NAME,REGNO,ADDRESS,CTIME) VALUES('Shree','10315','Kalyan East',now());`
     },{
         "table": "SOCIETY",
-        "sql": `INSERT INTO SOCIETY (NAME,REGNO,ADDRESS) VALUES("Gurudev","2322","Dombivli East");`
+        "sql": `INSERT INTO SOCIETY (NAME,REGNO,ADDRESS,CTIME) VALUES("Gurudev","2322","Dombivli East",now());`
     },{
         "table": "USER",
         "sql": `INSERT INTO USER (USERNAME,PASSWORD) VALUES ('Admin','Admin3193');`
