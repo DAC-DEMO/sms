@@ -38,6 +38,11 @@ app.config(function ($routeProvider) {
         "controller": "updateMember"
     });
 
+    $routeProvider.when("/memberList", {
+        "templateUrl": "./views/master/memberList.html",
+        "controller": "memberList"
+    });
+
     $routeProvider.when("/home", {
         "templateUrl": "./views/master/homepage.html",
         "controller": "home"
