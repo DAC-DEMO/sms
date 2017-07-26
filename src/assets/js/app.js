@@ -48,6 +48,21 @@ app.config(function ($routeProvider) {
         "controller": "home"
     });
 
+    $routeProvider.when("/addSocietyMaintenanceDetails", {
+        "templateUrl": "./views/master/addSocietyMaintenanceDetails.html",
+        "controller": "addSocietyMaintenanceDetails"
+    });
+
+    $routeProvider.when("/updateSocietyMaintenanceDetails", {
+        "templateUrl": "./views/master/updateSocietyMaintenanceDetails.html",
+        "controller": "updateSocietyMaintenanceDetails"
+    });
+
+     $routeProvider.when("/home", {
+        "templateUrl": "./views/master/homepage.html",
+        "controller": "home"
+    });
+
     // ............TRANSACTION FOLDER.............
 
     $routeProvider.when("/memberReceipt", {
