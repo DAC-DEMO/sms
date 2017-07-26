@@ -28,8 +28,9 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width: 220px;">Report</a>
                             <ul class="dropdown-menu">
                                 <li><a role="button">Maintenance Bill(Datewise)</a></li>
-                                <li><a role="button">Maintenance Bill Receipt(Datewise)</a><li>
-                                <li><a role="button">Society Expenses Report</a></li>
+                                <li><a role="button">Maintenance Bill Receipt(Datewise)</a>
+                                    <li>
+                                        <li><a role="button">Society Expenses Report</a></li>
                             </ul>
                             <button class="btn btn-primary" style="margin-top: 2%;margin-left: 63%;" ng-click="home();">
                                 <span>Home</span>
@@ -55,16 +56,10 @@
     <div ng-include="'./views/master/homepage.html'"></div>
 </div>
 
-<<<<<<< HEAD
 
 <div ng-show="data.defaultTab == 'addMem'">
     <div ng-include="'./views/master/addMember.html'"></div>
 </div>
-=======
-    <div ng-show="data.defaultTab == 'addMem'">
-        <div ng-include="'./views/master/addMember.html'"></div>
-    </div>
->>>>>>> 7c6a5c9a90f26ce77c523b2f1ee65c63b2b8c3d7
 
 <div ng-show="data.defaultTab == 'updateMem'">
     <div ng-include="'./views/master/updateMember.html'"></div>
@@ -78,20 +73,18 @@
     <div ng-include="'./views/master/addSocietyAccount.html'"></div>
 </div>
 
-<<<<<<< HEAD
 <!--Transaction pages -->
-=======
-    <div ng-show="data.defaultTab == 'socMenDetail'">
-        <div ng-include="'./views/master/addSocietyMaintenanceDetails.html'"></div>
-    </div>
+
+<div ng-show="data.defaultTab == 'socMenDetail'">
+    <div ng-include="'./views/master/addSocietyMaintenanceDetails.html'"></div>
+</div>
 
 
-    <div ng-show="data.defaultTab == 'upSocMenDetail'">
-        <div ng-include="'./views/master/updateSocietyMaintenanceDetails.html'"></div>
-    </div>
+<div ng-show="data.defaultTab == 'upSocMenDetail'">
+    <div ng-include="'./views/master/updateSocietyMaintenanceDetails.html'"></div>
+</div>
 
-    <!--Transaction pages -->
->>>>>>> 7c6a5c9a90f26ce77c523b2f1ee65c63b2b8c3d7
+<!--Transaction pages -->
 
 <div ng-show="data.defaultTab == 'maintananceBill'">
     <div ng-include="'./views/transaction/maintenanceBill.html'"></div>

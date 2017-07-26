@@ -1,59 +1,59 @@
-<div class="container" ng-controller="updateMember">
-        <table class="table table-striped  table-hover jumbotron">
+<div class="container" ng-controller="addMember">
+    <table class="table table-striped  table-hover jumbotron">
         <tbody>
             <tr class="success">
                 <td>Flat.No/Code:</td>
-                <td><input type="text"></td>
+                <td><input type="text" ng-model="memberDetails.flat_no"></td>
                 <td>Name:</td>
-                <td><input type="text"></td>
+                <td><input type="text" ng-model="memberDetails.member_name"></td>
             </tr>
             <tr class="success">
-                <td>Sq.Ft:</td>
-                <td><input type="number"></td>
+                <td>Area(Sq.Ft):</td>
+                <td><input type="number" ng-model="memberDetails.area"></td>
                 <td>Floor:</td>
-                <td><input type="number"></td>
+                <td><input type="number" ng-model="memberDetails.floor"></td>
             </tr>
         </tbody>
     </table>
-
     <table class="table  table-striped table-hover jumbotron">
 
         <tbody>
             <tr class="Info">
                 <td>Muncipal Tax:</td>
-                <td><input type="number" required></td>
+                <td><input type="number" required ng-model="memberDetails.municipal_tax"></td>
                 <td>Sinking Fund:</td>
-                <td><input type="number"></td>
+                <td><input type="number" ng-model="memberDetails.sinking_fund"></td>
             </tr>
             <tr class="Info">
                 <td>Service Charges:</td>
-                <td><input type="number"></td>
+                <td><input type="number" ng-model="memberDetails.service_charges"></td>
                 <td>Repaire and Maintenance:</td>
-                <td><input type="number"></td>
+                <td><input type="number" ng-model="memberDetails.rep_and_maintenance"></td>
             </tr>
             <tr class="Info">
                 <td>Electric Charges:</td>
-                <td><input type="number"></td>
+                <td><input type="number" ng-model="memberDetails.electric_charges"></td>
                 <td>Water Charges:</td>
-                <td><input type="number"></td>
+                <td><input type="number" ng-model="memberDetails.water_charges"></td>
+            </tr>
+            <tr class="Info">
+                <td>Parking Charges:</td>
+                <td><input type="number" ng-model="memberDetails.parking_charges"></td>
+                <td>Bank Charges:</td>
+                <td><input type="number" ng-model="memberDetails.bank_charges"></td>
             </tr>
             <tr class="Info">
                 <td>Insurance:</td>
-                <td><input type="number"></td>
+                <td><input type="number" ng-model="memberDetails.insurance"></td>
                 <td>Non Occupancy Charges:</td>
-                <td><input type="number"></td>
-            </tr>
-            <tr class="Info">
-                <td>Opening Principal:</td>
-                <td><input type="number"></td>
-                <td>Current Principal:</td>
-                <td><input type="number"></td>
+                <td><input type="number" ng-model="memberDetails.non_occupancy_charges"></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td> <button class="btn btn-primary btn-md" style="width: 50%">Update</button></td>
+                <td><button class="btn btn-primary btn-md" style="width: 50%" ng-click="dbInsertMemberData();">Add Member</button>
+                </td>
             </tr>
         </tbody>
     </table>
