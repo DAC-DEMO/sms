@@ -11,6 +11,8 @@
                                 <li><a role="button" ng-click="changeTab('updateMem');">Update Memeber</a></li>
                                 <li><a role="button" ng-click="changeTab('memList');">Member list</a></li>
                                 <li><a role="button" ng-click="changeTab('addSocAcc');">Add Society Account</a></li>
+                                <li><a role="button" ng-click="changeTab('socMenDetail');">Add Society Maintenance Details</a></li>
+                                <li><a role="button" ng-click="changeTab('upSocMenDetail');">Update Society Maintenance Details</a></li>
                             </ul>
                         </li>
 
@@ -53,10 +55,16 @@
     <div ng-include="'./views/master/homepage.html'"></div>
 </div>
 
+<<<<<<< HEAD
 
 <div ng-show="data.defaultTab == 'addMem'">
     <div ng-include="'./views/master/addMember.html'"></div>
 </div>
+=======
+    <div ng-show="data.defaultTab == 'addMem'">
+        <div ng-include="'./views/master/addMember.html'"></div>
+    </div>
+>>>>>>> 7c6a5c9a90f26ce77c523b2f1ee65c63b2b8c3d7
 
 <div ng-show="data.defaultTab == 'updateMem'">
     <div ng-include="'./views/master/updateMember.html'"></div>
@@ -70,7 +78,20 @@
     <div ng-include="'./views/master/addSocietyAccount.html'"></div>
 </div>
 
+<<<<<<< HEAD
 <!--Transaction pages -->
+=======
+    <div ng-show="data.defaultTab == 'socMenDetail'">
+        <div ng-include="'./views/master/addSocietyMaintenanceDetails.html'"></div>
+    </div>
+
+
+    <div ng-show="data.defaultTab == 'upSocMenDetail'">
+        <div ng-include="'./views/master/updateSocietyMaintenanceDetails.html'"></div>
+    </div>
+
+    <!--Transaction pages -->
+>>>>>>> 7c6a5c9a90f26ce77c523b2f1ee65c63b2b8c3d7
 
 <div ng-show="data.defaultTab == 'maintananceBill'">
     <div ng-include="'./views/transaction/maintenanceBill.html'"></div>
