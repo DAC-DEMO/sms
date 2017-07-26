@@ -14,7 +14,7 @@ app.controller("login", function ($scope, $location) {
 
     $scope.login = function () {
 
-        if ($scope.user.username == "feb17" && $scope.user.password == "Welcome@123") {
+        if ($scope.user.username == "12345" && $scope.user.password == "12345") {
 
             $location.path("/societySelect");
 

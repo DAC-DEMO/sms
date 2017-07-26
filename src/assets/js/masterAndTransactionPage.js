@@ -22,8 +22,9 @@ app.controller("masterAndTransactionPage", function ($scope, $location) {
     };
 
     $scope.changeTab = function (value) {
-        $scope.data.defaultTab = value;
-    };
 
+        $scope.data.defaultTab = value;
+        
+    };
 
 });

@@ -12,6 +12,7 @@ var config = {
 
 ref.dbInsertSociety1 = function (socFormData, callback) {
     console.log(socFormData);
+    
     var connection = mysql.createConnection(config);
 
     connection.connect();
@@ -53,5 +54,11 @@ ref.dbGetSocietyNames1 = function (callback) {
     });
 
 };
+
+//-- store member data into database --//
+
+ref.dbInsertMemberData1 = function(){
+
+}
 
 module.exports = ref;
