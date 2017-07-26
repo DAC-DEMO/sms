@@ -38,6 +38,11 @@ app.config(function ($routeProvider) {
         "controller": "updateMember"
     });
 
+    $routeProvider.when("/home", {
+        "templateUrl": "./views/master/homepage.html",
+        "controller": "home"
+    });
+
     // ............TRANSACTION FOLDER.............
 
     $routeProvider.when("/memberReceipt", {
@@ -54,5 +59,7 @@ app.config(function ($routeProvider) {
         "templateUrl": "./views/transaction/maintenanceBill.html",
         "controller": "maintenanceBill"
     });
+
+    
 
 });

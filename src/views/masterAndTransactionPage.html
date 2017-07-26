@@ -46,6 +46,10 @@
 
     <!--Master pages -->
 
+    <div ng-show="data.defaultTab == 'home'">
+        <div ng-include="'./views/master/homepage.html'"></div>
+    </div>
+
     <div ng-show="data.defaultTab == 'addMem'">
         <div ng-include="'./views/master/addMember.html'"></div>
     </div>
