@@ -33,9 +33,23 @@ dml.tableDefination = [{
 	                MID INT(20) PRIMARY KEY AUTO_INCREMENT,
                     FLAT_NO VARCHAR(20) NOT NULL,
                     FLOOR_NO VARCHAR(5) NOT NULL,
-                    MNAME VARCHAR(70) NOT NULL,
-	                MOBILE INT(10) NOT NULL,
-                    EMAIL VARCHAR(30),
+                    PARKING_CHARGES double(7,2),
+                    BANK_CHARGES double(7,2),
+                    NON_OCCUPANCY_CHARGES double(7,2),
+                    SID INT(20),
+                    foreign key (SID) references SOCIETY(SID),
+                    BILL_DATE DATE
+                );`
+},{
+    "tablename" : "FIXED_MAINTENANCE_CHARGES",
+    "sql" : `CREATE TABLE IF NOT EXISTS FIXED_MAINTENANCE_CHARGES(
+	                MUNICIPLE_TAX double(7,2),
+                    SINKING_FUND double(7,2),
+                    SERVICE_CHARGES double(7,2),
+                    REP_AND_MAINTENANCE double(7,2),
+                    ELECTRIC_CHARGES double(7,2),
+                    WATER_CHARGES double(7,2),
+                    INSURANCE double(7,2),
                     SID INT(20),
                     foreign key (SID) references SOCIETY(SID)
                 );`
