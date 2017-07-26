@@ -22,16 +22,19 @@
                                 <li><a role="button" ng-click="changeTab('socVoucher');">Society Voucher</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width: 320px;"
+                        <li class="dropdown" style="width: 320px;">
+                            <!-- <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="width: 320px;"
                                 ng-if="post.index">Report</a>
                             <ul class="dropdown-menu">
                                 <li><a role="button">Master Report</a></li>
                                 <li><a role="button">Transaction Report</a></li>
-                                <li><a role="button">Maintenance Report</a>
-                                    <li>
-                            </ul>
-                            </li>
+                                <li><a role="button">Maintenance Report</a><li>
+                            </ul> -->
+                            <button class="btn btn-primary" style="margin-top: 2%;margin-left: 63%;" ng-click="home();">
+                                <span>Home</span>
+                                <span class="glyphicon glyphicon-home"></span>
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>

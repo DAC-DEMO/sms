@@ -48,4 +48,5 @@ app.controller("societySelect", function ($scope, $location) {
         $location.path("/masterAndTransactionPage");
 
     };
+    
 });

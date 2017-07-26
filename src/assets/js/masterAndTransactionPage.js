@@ -27,4 +27,8 @@ app.controller("masterAndTransactionPage", function ($scope, $location) {
         
     };
 
+    $scope.home = function(){
+        $location.path("/societySelect")
+    }
+
 });
