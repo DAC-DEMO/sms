@@ -1,23 +1,22 @@
 
-<div class="container">
-   
-        
-            <table class="table table-striped  table-hover jumbotron">
+<div class="container jumbotron">
+    <center><h3><button class="btn btn-primary" ng-click="getMemberList();">Generate Member List</button></h3></center>
+    
+            <table class="table table-bordered ">
                 <thead>
                     <tr>
-                        <th>SrNo</th> 
-                        <th>FlatNo</th>
+                        <th>Sr No</th> 
+                        <th>Flat No</th>
                         <th>Member Name</th>
                     </tr>
+                    
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr ng-repeat="item in memberList">
+                        <td>item.MID</td>
+                        <td>item.FLAT_NO</td>
+                        <td>item.NAME</td>
                     </tr>
                 </tbody>
             </table>
-       
-   
 </div>
