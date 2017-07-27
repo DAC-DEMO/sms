@@ -31,8 +31,10 @@ dml.tableDefination = [{
     "tableName" : "MEMBER",
     "sql" : `CREATE TABLE IF NOT EXISTS MEMBER(
 	                MID INT(20) PRIMARY KEY AUTO_INCREMENT,
-                    FLAT_NO VARCHAR(20) NOT NULL,
+                    FLAT_NO INT(10) UNIQUE NOT NULL,
                     FLOOR_NO VARCHAR(5) NOT NULL,
+                    NAME VARCHAR(50) NOT NULL,
+                    AREA DOUBLE(8,2) NOT NULL,
                     PARKING_CHARGES double(7,2),
                     BANK_CHARGES double(7,2),
                     NON_OCCUPANCY_CHARGES double(7,2),
@@ -50,7 +52,7 @@ dml.tableDefination = [{
                     ELECTRIC_CHARGES double(7,2),
                     WATER_CHARGES double(7,2),
                     INSURANCE double(7,2),
-                    SID INT(20),
+                    SID INT(20) UNIQUE,
                     foreign key (SID) references SOCIETY(SID)
                 );`
 }

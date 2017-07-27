@@ -24,6 +24,8 @@ app.controller("masterAndTransactionPage", function ($scope, $location) {
     $scope.changeTab = function (value) {
 
         $scope.data.defaultTab = value;
+        // if(value == "addMem")
+        // addMem.getSocietyMaintenanceDetails();
         
     };
 
