@@ -79,26 +79,49 @@ ref.addMaintenanceDetails1 = function (societyMaintenanceDetails,callback) {
 
 };
 
-// //--
+//--Member maintenance form function --//
 
-// ref.getSocietyMaintenanceDetails1 = function(callback){
+ref.getMaintenanceDetails1 = function(callback){
 
-//     var connection = mysql.createConnection(config);
-//     connection.connect();
+    var connection = mysql.createConnection(config);
+    connection.connect();
 
-//     var sql = `select * from FIXED_MAINTENANCE_CHARGES where  SID = societyDetails1.SID`;
+    var sql = `select * from FIXED_MAINTENANCE_CHARGES where  SID = ? ;`;
 
-//     connection.query(sql, function (err, data) {
+    var param =[societyDetails1.SID];
 
-//         if (err) {
-//             console.log(err);
-//         }
-//         else {
-//             callback(data);
-//         }
-//         connection.end();
-//     });
-// }
+    connection.query(sql,param, function (err, data) {
 
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+}
 
+ref.setMaintenanceDetails1 = function(memberDetails,callback){
+
+    var connection = mysql.createConnection(config);
+
+    connection.connect();
+
+    var sql = `insert into MEMBER (FLAT_NO,FLOOR_NO,NAME,AREA,PARKING_CHARGES,BANK_CHARGES,NON_OCCUPANCY_CHARGES,SID,BILL_DATE) values(?,?,?,?,?,?,?,?,sysdate());`;
+
+    var param =[memberDetails.FLAT_NO, memberDetails.FLOOR_NO, memberDetails.NAME, memberDetails.AREA,memberDetails.PARKING_CHARGES,memberDetails.BANK_CHARGES,memberDetails.NON_OCCUPANCY_CHARGES  ,societyDetails1.SID];
+
+    connection.query(sql,param, function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+
+}
 module.exports = ref;

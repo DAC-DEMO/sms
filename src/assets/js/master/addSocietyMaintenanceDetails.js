@@ -13,6 +13,8 @@ app.controller("addSocietyMaintenanceDetails", function ($scope, $location) {
 
         module1.addMaintenanceDetails1($scope.societyMaintenanceDetails, function (response) {
             console.log(response);
+            if(response.affectedRows != 0)
+                alert("Details saved");
         });
 
         $scope.societyMaintenanceDetails = {};
