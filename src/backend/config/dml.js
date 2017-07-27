@@ -31,7 +31,7 @@ dml.tableDefination = [{
     "tableName" : "MEMBER",
     "sql" : `CREATE TABLE IF NOT EXISTS MEMBER(
 	                MID INT(20) PRIMARY KEY AUTO_INCREMENT,
-                    FLAT_NO INT(10) UNIQUE NOT NULL,
+                    FLAT_NO INT(10) NOT NULL,
                     FLOOR_NO VARCHAR(5) NOT NULL,
                     NAME VARCHAR(50) NOT NULL,
                     AREA DOUBLE(8,2) NOT NULL,

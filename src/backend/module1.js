@@ -148,4 +148,28 @@ ref.updateMaintenanceDetails1 = function (societyMaintenanceDetails,callback) {
 
 };
 
+//--SEARCH MEMBER FLATWISE --//
+
+
+ref.getMemberDetails1 = function(memberDetails,callback){
+
+    var connection = mysql.createConnection(config);
+    connection.connect();
+
+    var sql = `select * from member where FLAT_NO = ? and sid = ?`;
+
+    var param =[memberDetails.FLAT_NO,societyDetails1.SID];
+
+    connection.query(sql,param, function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+}
+
 module.exports = ref;
