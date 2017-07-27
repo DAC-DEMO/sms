@@ -245,31 +245,6 @@ ref.reflectDues = function(memberDetails, ReceiptData, callback){
         });
 
 }
-// ref.updateMemberDues = function (memberDetails, ReceiptData) {
-
-//         var connection = mysql.createConnection(config);
-
-//         connection.connect();
-
-//         var sql = `update member
-//                 set dues = ? - ?
-//                 where SID = ? and MID = ?;`;
-
-//         var param = [memberDetails.BILL_AMT, ReceiptData.TOTAL_AMT_PAID, memberDetails.SID, memberDetails.MID];
-
-//         connection.query(sql, param, function (err, data) {
-
-//             if (err) {
-//                 console.log(err);
-//             }
-//             else {
-//                 console.log(data);
-//             }
-//             connection.end();
-//         });
-
-//     }
-
 
 // -- GET MEMBER LIST -- //
 ref.getMemberList1 = function (callback) {
