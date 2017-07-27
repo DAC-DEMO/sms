@@ -39,7 +39,7 @@ app.config(function ($routeProvider) {
     });
 
     $routeProvider.when("/memberList", {
-        "templateUrl": "./views/reports/memberList.html",
+        "templateUrl": "./views/master/memberList.html",
         "controller": "memberList"
     });
 
@@ -75,11 +75,26 @@ app.config(function ($routeProvider) {
         "controller": "socVoucher"
     });
 
-     $routeProvider.when("/maintenanceBill", {
+    $routeProvider.when("/maintenanceBill", {
         "templateUrl": "./views/transaction/maintenanceBill.html",
         "controller": "maintenanceBill"
     });
 
+    // ..........Report folder........//
     
+    $routeProvider.when("/maintenanceBillReceiptReport", {
+        "templateUrl": "./views/reports/maintenanceBillReceiptReport.html",
+        "controller": "maintenanceBillReceiptReport"
+    });
+
+    $routeProvider.when("/maintenanceBillReportDatewise", {
+        "templateUrl": "./views/reports/maintenanceBillReportDatewise.html",
+        "controller": "maintenanceBillReportDatewise"
+    });
+
+    $routeProvider.when("/societyExpensesReport", {
+        "templateUrl": "./views/reports/societyExpensesReport.html",
+        "controller": "societyExpensesReport"
+    });
 
 });
