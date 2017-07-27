@@ -55,6 +55,19 @@ dml.tableDefination = [{
                     SID INT(20) UNIQUE,
                     foreign key (SID) references SOCIETY(SID)
                 );`
+},{
+    "tablename":"MEMBER_TRANSACTION",
+    "sql": `CREATE TABLE MEMBER_TRANSACTION(
+	            RECEIPT_NO INT(30) PRIMARY KEY,
+	            DATE DATE NOT NULL,
+                MID INT(20),
+                SID INT(20),
+                CHEQUE_NO VARCHAR(6) NOT NULL UNIQUE,
+                TOTAL_AMT_PAID DOUBLE(9,2),
+                BILL_AMT DOUBLE(9,2) NOT NULL,
+                foreign key (SID) references SOCIETY(SID),
+                foreign key (MID) references MEMBER(MID)
+            )`
 }
 ];
 

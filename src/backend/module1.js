@@ -108,7 +108,7 @@ ref.setMaintenanceDetails1 = function(memberDetails,callback){
 
     connection.connect();
 
-    var sql = `insert into MEMBER (FLAT_NO,FLOOR_NO,NAME,AREA,PARKING_CHARGES,BANK_CHARGES,NON_OCCUPANCY_CHARGES,SID,BILL_DATE) values(?,?,?,?,?,?,?,?,sysdate());`;
+    var sql = `insert into MEMBER (DUES,FLAT_NO,FLOOR_NO,NAME,AREA,PARKING_CHARGES,BANK_CHARGES,NON_OCCUPANCY_CHARGES,SID,BILL_DATE) values(0,?,?,?,?,?,?,?,?,sysdate());`;
 
     var param =[memberDetails.FLAT_NO, memberDetails.FLOOR_NO, memberDetails.NAME, memberDetails.AREA,memberDetails.PARKING_CHARGES,memberDetails.BANK_CHARGES,memberDetails.NON_OCCUPANCY_CHARGES  ,societyDetails1.SID];
 
