@@ -39,7 +39,7 @@ app.config(function ($routeProvider) {
     });
 
     $routeProvider.when("/memberList", {
-        "templateUrl": "./views/master/memberList.html",
+        "templateUrl": "./views/reports/memberList.html",
         "controller": "memberList"
     });
 

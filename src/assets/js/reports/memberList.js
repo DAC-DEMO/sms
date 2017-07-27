@@ -9,8 +9,11 @@ app.controller("memberList", function ($scope,$location) {
     $scope.memberList = [];
 
     $scope.getMemberList = function(){
+        
         module1.getMemberList1(function(response){
             console.log(response);
+            $scope.memberList = response;
+
         });
     }
 
