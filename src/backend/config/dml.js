@@ -57,12 +57,12 @@ dml.tableDefination = [{
                 );`
 },{
     "tablename":"MEMBER_TRANSACTION",
-    "sql": `CREATE TABLE MEMBER_TRANSACTION(
-	            RECEIPT_NO INT(30) PRIMARY KEY,
+    "sql": `CREATE TABLE IF NOT EXISTS MEMBER_TRANSACTION(
+	            RECEIPT_NO INT(30) UNIQUE,
 	            DATE DATE NOT NULL,
                 MID INT(20),
                 SID INT(20),
-                CHEQUE_NO VARCHAR(6) NOT NULL UNIQUE,
+                CHEQUE_NO VARCHAR(6) UNIQUE,
                 TOTAL_AMT_PAID DOUBLE(9,2),
                 BILL_AMT DOUBLE(9,2) NOT NULL,
                 foreign key (SID) references SOCIETY(SID),

@@ -1,40 +1,41 @@
-<div class="container">
+<div class="container" ng-controller="memberReceipt">
     <table class="table   table-hover jumbotron">
         <tbody>
             <tr>
                 <td>Receipt No :</td>
-                <td><input type="text"></td>
+                <td><input type="number" ng-model = "ReceiptData.RECEIPT_NO"></td>
                 
             </tr>
             
             <tr>
                 <td>Member Name :</td>
-                <td><input type="text"></td>
+                <td><input type="text" readonly ng-model = "memberDetails.NAME"></td>
                 
             </tr>
 
             <tr>
                 <td>Receipt Date :</td>
-                <td><input type="text"></td>
+                <td><input type="date"  ng-model = "ReceiptData.DATE"></td>
             </tr>
 
             <tr>
                 <td>FLAT No :</td>
-                <td><input type="text"></td>
+                <td><input type="text" ng-model = "memberDetails.FLAT_NO">
+                <button class="btn btn-primary" ng-click="getMemberDetails()">Search</button></td>
             </tr>
 
             <tr>
                 <td>By Cheque No. </td>
-                <td><input type="text"></td>
+                <td><input type="text" ng-model = "ReceiptData.CHEQUE_NO"></td>
             </tr>
 
             <tr>
                 <td>Amount</td>
-                <td><input type="text"></td>
+                <td><input type="number" ng-model = "ReceiptData.TOTAL_AMT_PAID"></td>
             </tr>
             <tr>
                 <td> </td>
-                <td> <button class="btn btn-primary btn-md" style="width: 25%">Generate</button></td>
+                <td> <button class="btn btn-primary btn-md" style="width: 25%" ng-click="generateMaintenanceBillReceipt();">Generate</button></td>
             </tr>
         </tbody>
     </table>

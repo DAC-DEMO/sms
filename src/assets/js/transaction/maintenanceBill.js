@@ -15,6 +15,15 @@ app.controller("maintenanceBill", function ($scope, $location) {
         });
     }
 
+    $scope.generateMaintenanceBill = function(){
+        module1.generateMaintenanceBill1($scope.memberDetails,function (response) {
+            console.log(response);
+            if(response.affectedRows != 0)
+                alert("Generated bill successfully");
+        });
+         $scope.memberDetails = {};
+    }
+
      
 
 
