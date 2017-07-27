@@ -269,4 +269,25 @@ ref.getMemberList1 = function (callback) {
     });
 };
 
+// --LIST OF MAINTENANCE BILL DATEWISE ---//
+ref.displayReceiptList1 = function(callback){
+
+    var connection = mysql.createConnection(config);
+
+    connection.connect();
+
+    var sql = `select * from member,MEMBER_TRANSACTION
+                where member.mid = MEMBER_TRANSACTION.mid;`;
+
+    connection.query(sql, function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+}
 module.exports = ref;
