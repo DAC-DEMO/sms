@@ -45,13 +45,13 @@ dml.tableDefination = [{
 },{
     "tablename" : "FIXED_MAINTENANCE_CHARGES",
     "sql" : `CREATE TABLE IF NOT EXISTS FIXED_MAINTENANCE_CHARGES(
-	                MUNICIPLE_TAX double(7,2),
-                    SINKING_FUND double(7,2),
-                    SERVICE_CHARGES double(7,2),
-                    REP_AND_MAINTENANCE double(7,2),
-                    ELECTRIC_CHARGES double(7,2),
-                    WATER_CHARGES double(7,2),
-                    INSURANCE double(7,2),
+	                MUNICIPLE_TAX double(7,2) NOT NULL,
+                    SINKING_FUND double(7,2) NOT NULL,
+                    SERVICE_CHARGES double(7,2) NOT NULL,
+                    REP_AND_MAINTENANCE double(7,2) NOT NULL,
+                    ELECTRIC_CHARGES double(7,2) NOT NULL,
+                    WATER_CHARGES double(7,2) NOT NULL,
+                    INSURANCE double(7,2) NOT NULL,
                     SID INT(20) UNIQUE,
                     foreign key (SID) references SOCIETY(SID)
                 );`

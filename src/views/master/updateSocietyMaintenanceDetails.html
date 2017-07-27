@@ -1,4 +1,4 @@
-<div class="container jumbotron" ng-controller="updateSocietyMaintenanceDetails">
+<div class="container" ng-controller="updateSocietyMaintenanceDetails">
     
         <center><h3>UPDATE DETAILS</h3></center> 
   
@@ -7,35 +7,34 @@
         <tbody>
             <tr class="success">
                 <td>Muncipal Tax:</td>
-                <td><input type="number" required ng-model="memberDetails.munctax"></td>
+                <td><input type="number" ng-model="societyMaintenanceDetails.MUNICIPLE_TAX"></td>
                 <td>Sinking Fund:</td>
-                <td><input type="number" ng-model="memberDetails.sinkfnd"></td>
+                <td><input type="number" ng-model="societyMaintenanceDetails.SINKING_FUND"></td>
             </tr>
             <tr class="success">
                 <td>Service Charges:</td>
-                <td><input type="number" ng-model="memberDetails.service_charges"></td>
+                <td><input type="number" ng-model="societyMaintenanceDetails.SERVICE_CHARGES"></td>
                 <td>Repaire and Maintenance:</td>
-                <td><input type="number" ng-model="memberDetails.rep_and_maintenance"></td>
+                <td><input type="number" ng-model="societyMaintenanceDetails.REP_AND_MAINTENANCE"></td>
             </tr>
             <tr class="success">
                 <td>Electric Charges:</td>
-                <td><input type="number" ng-model="memberDetails.electric_charges"></td>
+                <td><input type="number" ng-model="societyMaintenanceDetails.ELECTRIC_CHARGES"></td>
                 <td>Water Charges:</td>
-                <td><input type="number" ng-model="memberDetails.water_charges"></td>
+                <td><input type="number" ng-model="societyMaintenanceDetails.WATER_CHARGES"></td>
             </tr>
             <tr class="success">
                <td>Insurance:</td>
-                <td><input type="number" ng-model="memberDetails.insurance"></td>
+                <td><input type="number" ng-model="societyMaintenanceDetails.INSURANCE"></td>
                 <td></td>
                 <td></td>
             </tr>
             
             <tr>
                 <td></td>
+                <td><button class="btn btn-primary btn-md" style="width: 50%" ng-click="getMaintenanceDetails();">Load Charges</button></td>
                 <td></td>
-                <td></td>
-                <td><button class="btn btn-primary btn-md" style="width: 50%" ng-click="dbInsertMemberData();">Update</button>
-                </td>
+                <td><button class="btn btn-primary btn-md" style="width: 50%" ng-click="updateMaintenanceDetails();">Update</button></td>
             </tr>
         </tbody>
     </table>

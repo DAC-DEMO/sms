@@ -3,15 +3,15 @@
         <tbody>
             <tr class="success">
                 <td>Flat.No/Code:</td>
-                <td><input type="text" ng-model="memberDetails.flat_no"></td>
+                <td><input type="number" ng-model="memberDetails.FLAT_NO"></td>
                 <td>Name:</td>
-                <td><input type="text" ng-model="memberDetails.member_name"></td>
+                <td><input type="text" ng-model="memberDetails.NAME"></td>
             </tr>
             <tr class="success">
                 <td>Area(Sq.Ft):</td>
-                <td><input type="number" ng-model="memberDetails.area"></td>
+                <td><input type="number" ng-model="memberDetails.AREA"></td>
                 <td>Floor:</td>
-                <td><input type="number" ng-model="memberDetails.floor"></td>
+                <td><input type="number" ng-model="memberDetails.FLOOR_NO"></td>
             </tr>
         </tbody>
     </table>
@@ -20,39 +20,39 @@
         <tbody>
             <tr class="Info">
                 <td>Muncipal Tax:</td>
-                <td><input type="number" required ng-model="memberDetails.municipal_tax"></td>
+                <td><input type="number" readonly ng-model="memberDetails.MUNICIPLE_TAX"></td>
                 <td>Sinking Fund:</td>
-                <td><input type="number" ng-model="memberDetails.sinking_fund"></td>
+                <td><input type="number" readonly ng-model="memberDetails.SINKING_FUND"></td>
             </tr>
             <tr class="Info">
                 <td>Service Charges:</td>
-                <td><input type="number" ng-model="memberDetails.service_charges"></td>
+                <td><input type="number" readonly ng-model="memberDetails.SERVICE_CHARGES"></td>
                 <td>Repaire and Maintenance:</td>
-                <td><input type="number" ng-model="memberDetails.rep_and_maintenance"></td>
+                <td><input type="number" readonly ng-model="memberDetails.REP_AND_MAINTENANCE"></td>
             </tr>
             <tr class="Info">
                 <td>Electric Charges:</td>
-                <td><input type="number" ng-model="memberDetails.electric_charges"></td>
+                <td><input type="number" readonly ng-model="memberDetails.ELECTRIC_CHARGES"></td>
                 <td>Water Charges:</td>
-                <td><input type="number" ng-model="memberDetails.water_charges"></td>
+                <td><input type="number" readonly ng-model="memberDetails.WATER_CHARGES"></td>
             </tr>
             <tr class="Info">
                 <td>Parking Charges:</td>
-                <td><input type="number" ng-model="memberDetails.parking_charges"></td>
+                <td><input type="number" ng-model="memberDetails.PARKING_CHARGES"></td>
                 <td>Bank Charges:</td>
-                <td><input type="number" ng-model="memberDetails.bank_charges"></td>
+                <td><input type="number"  ng-model="memberDetails.BANK_CHARGES"></td>
             </tr>
             <tr class="Info">
                 <td>Insurance:</td>
-                <td><input type="number" ng-model="memberDetails.insurance"></td>
+                <td><input type="number" readonly ng-model="memberDetails.INSURANCE"></td>
                 <td>Non Occupancy Charges:</td>
-                <td><input type="number" ng-model="memberDetails.non_occupancy_charges"></td>
-            </tr>
+                <td><input type="number" ng-model="memberDetails.NON_OCCUPANCY_CHARGES"></td>
+            </tr> 
             <tr>
                 <td></td>
+                <td><button class="btn btn-primary btn-md" style="width: 50%" ng-click="getMaintenanceDetails();">Get Charges</button></td>
                 <td></td>
-                <td></td>
-                <td><button class="btn btn-primary btn-md" style="width: 50%" ng-click="dbInsertMemberData();">Add Member</button>
+                <td><button class="btn btn-primary btn-md" style="width: 50%" ng-click="setMaintenanceDetails();">Update Member</button>
                 </td>
             </tr>
         </tbody>

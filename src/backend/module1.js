@@ -55,7 +55,7 @@ ref.dbGetSocietyNames1 = function (callback) {
 
 };
 
-//-- add Maintenance Details into database--//
+//-- add individual society Maintenance Details into database--//
 
 
 ref.addMaintenanceDetails1 = function (societyMaintenanceDetails,callback) {
@@ -79,7 +79,7 @@ ref.addMaintenanceDetails1 = function (societyMaintenanceDetails,callback) {
 
 };
 
-//--Member maintenance form function --//
+//--Member maintenance form function --and getting data to update society maintenance form //
 
 ref.getMaintenanceDetails1 = function(callback){
 
@@ -124,4 +124,28 @@ ref.setMaintenanceDetails1 = function(memberDetails,callback){
     });
 
 }
+
+//--UPDATE INTO TABLE FROM UPDATE SOCIETY CAHRGES --//
+
+ref.updateMaintenanceDetails1 = function (societyMaintenanceDetails,callback) {
+    var connection = mysql.createConnection(config);
+    connection.connect();
+
+    var sql = `UPDATE FIXED_MAINTENANCE_CHARGES SET MUNICIPLE_TAX = ?,SINKING_FUND = ?,SERVICE_CHARGES = ?,REP_AND_MAINTENANCE = ?,ELECTRIC_CHARGES =?,WATER_CHARGES = ?,INSURANCE =? WHERE SID= ?;`;
+
+    var param = [societyMaintenanceDetails.MUNICIPLE_TAX,societyMaintenanceDetails.SINKING_FUND,societyMaintenanceDetails.SERVICE_CHARGES,societyMaintenanceDetails.REP_AND_MAINTENANCE,societyMaintenanceDetails.ELECTRIC_CHARGES,societyMaintenanceDetails.WATER_CHARGES,societyMaintenanceDetails.INSURANCE,societyDetails1.SID];
+
+    connection.query(sql,param,function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+
+};
+
 module.exports = ref;

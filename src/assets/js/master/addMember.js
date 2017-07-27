@@ -8,13 +8,17 @@ app.controller("addMember", function ($scope, $location) {
 
     $scope.memberDetails = {};
 
+    //--- Get the details of society charges from database --// 
+
     $scope.getMaintenanceDetails = function(){
         module1.getMaintenanceDetails1(function(response){
           
             $scope.memberDetails = response[0];
 
-        })
-    }
+        });
+    };
+
+    // -- set the particular member parking charges for particular member --//
 
     $scope.setMaintenanceDetails = function(){
         module1.setMaintenanceDetails1($scope.memberDetails,function(response){
@@ -25,8 +29,9 @@ app.controller("addMember", function ($scope, $location) {
             // if(err){
             //     alert("record already exist for this member!!!");
             // }
-        })
-    }
-     $scope.memberDetails = {};
+        });
+        $scope.memberDetails = {};
+    };
+     
 
 });
