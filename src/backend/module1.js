@@ -246,6 +246,30 @@ ref.reflectDues = function(memberDetails, ReceiptData, callback){
 
 }
 
+ref.addAmountToSocietyAccount = function(memberDetails,ReceiptData, callback){
+    var connection = mysql.createConnection(config);
+
+        connection.connect();
+
+        var sql = `update society_accounts
+                    set TOTAL_AMOUNT = TOTAL_AMOUNT + ?
+                    where sid = ? and ACCOUNT_NAME = 'MAINTENANCE';`;
+
+        var param = [ReceiptData.TOTAL_AMT_PAID, memberDetails.SID];
+
+        connection.query(sql, param, function (err, data) {
+
+            if (err) {
+                console.log(err);
+            }
+            else {
+                console.log(data);
+            }
+            connection.end();
+        });
+}
+
+
 // -- GET MEMBER LIST -- //
 ref.getMemberList1 = function (callback) {
 
@@ -306,6 +330,29 @@ ref.displayMaintenanceBillReceiptList1 = function(dateLimit,callback){
                 between ? and ?;`;
 
     var param = [dateLimit.fromDate , dateLimit.toDate];
+
+    connection.query(sql,param, function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+}
+
+//-- ADD SOCIETY ACCOUNT --//
+
+ref.addSocietyAccount1 = function(societyAccountDetails,callback){
+    var connection = mysql.createConnection(config);
+
+    connection.connect();
+
+    var sql = `insert into society_accounts (ACCOUNT_CODE,SID,ACCOUNT_NAME,TOTAL_AMOUNT,ACCOUNT_CREATION_DATE) values (?,?,?,?,?);`;
+
+    var param = [societyAccountDetails.ACCOUNT_CODE, societyDetails1.SID ,societyAccountDetails.ACCOUNT_NAME , societyAccountDetails.TOTAL_AMOUNT , societyAccountDetails.ACCOUNT_CREATION_DATE];
 
     connection.query(sql,param, function (err, data) {
 

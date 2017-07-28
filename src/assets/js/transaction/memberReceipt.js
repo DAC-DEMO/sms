@@ -31,7 +31,14 @@ app.controller("memberReceipt", function ($scope, $location) {
             console.log(response);
             
         });
+
+        module1.addAmountToSocietyAccount($scope.memberDetails,$scope.ReceiptData,function(response){
+            console.log(response);
+        });
         alert("Receipt Generated...!!");
+
+        
+
         $scope.memberDetails={};
         $scope.ReceiptData ={};
 

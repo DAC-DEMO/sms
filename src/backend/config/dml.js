@@ -68,6 +68,16 @@ dml.tableDefination = [{
                 foreign key (SID) references SOCIETY(SID),
                 foreign key (MID) references MEMBER(MID)
             )`
+},{
+    "tablename":"SOCIETY_ACCOUNTS",
+    "sql":`CREATE TABLE IF NOT EXISTS SOCIETY_ACCOUNTS(
+	            ACCOUNT_CODE INT(10) NOT NULL,
+                SID INT(20),
+                ACCOUNT_NAME VARCHAR(30) NOT NULL,
+                TOTAL_AMOUNT DOUBLE(15,2) NOT NULL,
+                ACCOUNT_CREATION_DATE DATE NOT NULL,
+                foreign key (SID) references SOCIETY(SID)
+)`
 }
 ];
 
