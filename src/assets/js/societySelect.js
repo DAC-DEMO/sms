@@ -25,7 +25,8 @@ app.controller("societySelect", function ($scope, $location) {
     $scope.dbInsertSociety = function () {
 
         module1.dbInsertSociety1($scope.socFormData, function (response) {
-
+            if(response.affectedRows != 0)
+                alert("Society Created Successfully..!!!!");
         });
 
         $scope.socFormData = {};
