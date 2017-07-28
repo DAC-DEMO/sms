@@ -4,10 +4,10 @@
                 <tbody>
                     <tr>
                         <th>From Date</th>
-                        <td><input type="date"> </td>
+                        <td><input type="date" ng-model="dateLimit.fromDate"> </td>
                         <th>To Date</th>
-                        <td><input type="date"> </td>
-                        <td><button class="btn btn-success">Generate</button> </td>
+                        <td><input type="date" ng-model="dateLimit.toDate"> </td>
+                        <td><button class="btn btn-success" ng-click="displayMaintenanceBillReceiptList();">Generate</button> </td>
                     </tr>
                 </tbody>
             </table>
@@ -25,16 +25,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr ng-repeat="item in MaintenanceBillReceiptList">
+                        <td>{{item.RECEIPT_NO}}</td>
+                        <td>{{item.NAME}}</td>
+                        <td>{{item.BILL_DATE}}</td>
+                        <td>{{item.FLAT_NO}}</td>
+                        <td>{{item.CHEQUE_NO}}</td>
+                        <td>{{item.TOTAL_AMT_PAID}}</td>
                     </tr>
                 </tbody>
             </table>

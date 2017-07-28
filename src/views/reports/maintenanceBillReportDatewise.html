@@ -4,10 +4,10 @@
             <tbody>
                 <tr>
                     <th>From Date</th>
-                    <td><input type="date"> </td>
+                    <td><input type="date" ng-model="dateLimit.fromDate"> </td>
                     <th>To Date</th>
-                    <td><input type="date"> </td>
-                    <td><button class="btn btn-success" ng-click="displayReceiptList();">Generate</button> </td>
+                    <td><input type="date" ng-model="dateLimit.toDate"> </td>
+                    <td><button class="btn btn-success" ng-click="displayMaintenanceBillList();">Generate</button> </td>
                 </tr>
             </tbody>
         </table>
@@ -17,7 +17,6 @@
                 <tr>
                     <th>FlatNo</th>
                     <th>Member Name</th>
-                    <th>Society Charges</th>
                     <th>Parking Charges</th>
                     <th>Bank Charges</th>
                     <th>Non Occupancy Charges</th>
@@ -27,16 +26,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr >
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr ng-repeat="item in MaintenanceBillList">
+                    <td>{{item.FLAT_NO}}</td>
+                    <td>{{item.NAME}}</td>
+                    <td>{{item.PARKING_CHARGES}}</td>
+                    <td>{{item.BANK_CHARGES}}</td>
+                    <td>{{item.NON_OCCUPANCY_CHARGES}}</td>
+                    <td>{{item.dues}}</td>
+                    <td>{{item.BILL_DATE}}</td>
+                    <td>{{item.BILL_AMT}}</td>
                 </tr>
             </tbody>
         </table>

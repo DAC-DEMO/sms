@@ -270,16 +270,19 @@ ref.getMemberList1 = function (callback) {
 };
 
 // --LIST OF MAINTENANCE BILL DATEWISE ---//
-ref.displayReceiptList1 = function(callback){
+ref.displayMaintenanceBillList1 = function(dateLimit,callback){
 
     var connection = mysql.createConnection(config);
 
     connection.connect();
 
     var sql = `select * from member,MEMBER_TRANSACTION
-                where member.mid = MEMBER_TRANSACTION.mid;`;
+                where member.mid = MEMBER_TRANSACTION.mid and MEMBER_TRANSACTION.DATE
+                between ? and ?;`;
 
-    connection.query(sql, function (err, data) {
+    var param = [dateLimit.fromDate , dateLimit.toDate];
+
+    connection.query(sql,param, function (err, data) {
 
         if (err) {
             console.log(err);
@@ -290,4 +293,30 @@ ref.displayReceiptList1 = function(callback){
         connection.end();
     });
 }
+
+// --LIST OF MAINTENANCE BILL RECEIPT DATEWISE ---//
+ref.displayMaintenanceBillReceiptList1 = function(dateLimit,callback){
+
+    var connection = mysql.createConnection(config);
+
+    connection.connect();
+
+    var sql = `select * from member,MEMBER_TRANSACTION
+                where member.mid = MEMBER_TRANSACTION.mid and MEMBER_TRANSACTION.DATE
+                between ? and ?;`;
+
+    var param = [dateLimit.fromDate , dateLimit.toDate];
+
+    connection.query(sql,param, function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+}
+
 module.exports = ref;
