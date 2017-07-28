@@ -32,7 +32,11 @@ app.controller("memberReceipt", function ($scope, $location) {
             
         });
 
-        module1.addAmountToSocietyAccount($scope.memberDetails,$scope.ReceiptData,function(response){
+        module1.addAmountToSocietyAccount_maintenance($scope.memberDetails,$scope.ReceiptData,function(response){
+            console.log(response);
+        });
+
+        module1.addAmountToSocietyAccount_bank($scope.memberDetails,$scope.ReceiptData,function(response){
             console.log(response);
         });
         alert("Receipt Generated...!!");

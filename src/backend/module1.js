@@ -221,52 +221,75 @@ ref.generateMaintenanceBillReceipt1 = function (memberDetails, ReceiptData, call
     });
 }
 
-ref.reflectDues = function(memberDetails, ReceiptData, callback){
-    
-        var connection = mysql.createConnection(config);
+ref.reflectDues = function (memberDetails, ReceiptData, callback) {
 
-        connection.connect();
+    var connection = mysql.createConnection(config);
 
-        var sql = `update member
+    connection.connect();
+
+    var sql = `update member
                 set dues = ? - ?
                 where SID = ? and MID = ?;`;
 
-        var param = [memberDetails.Total, ReceiptData.TOTAL_AMT_PAID, memberDetails.SID, memberDetails.MID];
+    var param = [memberDetails.Total, ReceiptData.TOTAL_AMT_PAID, memberDetails.SID, memberDetails.MID];
 
-        connection.query(sql, param, function (err, data) {
+    connection.query(sql, param, function (err, data) {
 
-            if (err) {
-                console.log(err);
-            }
-            else {
-                console.log(data);
-            }
-            connection.end();
-        });
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(data);
+        }
+        connection.end();
+    });
 
 }
 
-ref.addAmountToSocietyAccount = function(memberDetails,ReceiptData, callback){
+ref.addAmountToSocietyAccount_maintenance = function (memberDetails, ReceiptData, callback) {
     var connection = mysql.createConnection(config);
 
-        connection.connect();
+    connection.connect();
 
-        var sql = `update society_accounts
+    var sql = `update society_accounts
                     set TOTAL_AMOUNT = TOTAL_AMOUNT + ?
-                    where sid = ? and ACCOUNT_NAME = 'MAINTENANCE';`;
+                    where sid = ? and ACCOUNT_CODE = 111;`;
 
-        var param = [ReceiptData.TOTAL_AMT_PAID, memberDetails.SID];
+    var param = [ReceiptData.TOTAL_AMT_PAID, memberDetails.SID];
 
-        connection.query(sql, param, function (err, data) {
+    connection.query(sql, param, function (err, data) {
 
-            if (err) {
-                console.log(err);
-            }
-            else {
-                console.log(data);
-            }
-            connection.end();
-        });
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(data);
+        }
+        connection.end();
+    });
+}
+
+ref.addAmountToSocietyAccount_bank = function (memberDetails, ReceiptData, callback) {
+    var connection = mysql.createConnection(config);
+
+    connection.connect();
+
+    var sql = `update society_accounts
+                    set TOTAL_AMOUNT = TOTAL_AMOUNT + ?
+                    where sid = ? and ACCOUNT_CODE = 222;`;
+
+    var param = [ReceiptData.TOTAL_AMT_PAID, memberDetails.SID];
+
+    connection.query(sql, param, function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log(data);
+        }
+        connection.end();
+    });
 }
 
 
@@ -294,7 +317,7 @@ ref.getMemberList1 = function (callback) {
 };
 
 // --LIST OF MAINTENANCE BILL DATEWISE ---//
-ref.displayMaintenanceBillList1 = function(dateLimit,callback){
+ref.displayMaintenanceBillList1 = function (dateLimit, callback) {
 
     var connection = mysql.createConnection(config);
 
@@ -304,9 +327,9 @@ ref.displayMaintenanceBillList1 = function(dateLimit,callback){
                 where member.mid = MEMBER_TRANSACTION.mid and MEMBER_TRANSACTION.DATE
                 between ? and ?;`;
 
-    var param = [dateLimit.fromDate , dateLimit.toDate];
+    var param = [dateLimit.fromDate, dateLimit.toDate];
 
-    connection.query(sql,param, function (err, data) {
+    connection.query(sql, param, function (err, data) {
 
         if (err) {
             console.log(err);
@@ -319,7 +342,7 @@ ref.displayMaintenanceBillList1 = function(dateLimit,callback){
 }
 
 // --LIST OF MAINTENANCE BILL RECEIPT DATEWISE ---//
-ref.displayMaintenanceBillReceiptList1 = function(dateLimit,callback){
+ref.displayMaintenanceBillReceiptList1 = function (dateLimit, callback) {
 
     var connection = mysql.createConnection(config);
 
@@ -329,9 +352,9 @@ ref.displayMaintenanceBillReceiptList1 = function(dateLimit,callback){
                 where member.mid = MEMBER_TRANSACTION.mid and MEMBER_TRANSACTION.DATE
                 between ? and ?;`;
 
-    var param = [dateLimit.fromDate , dateLimit.toDate];
+    var param = [dateLimit.fromDate, dateLimit.toDate];
 
-    connection.query(sql,param, function (err, data) {
+    connection.query(sql, param, function (err, data) {
 
         if (err) {
             console.log(err);
@@ -345,16 +368,16 @@ ref.displayMaintenanceBillReceiptList1 = function(dateLimit,callback){
 
 //-- ADD SOCIETY ACCOUNT --//
 
-ref.addSocietyAccount1 = function(societyAccountDetails,callback){
+ref.addSocietyAccount1 = function (societyAccountDetails, callback) {
     var connection = mysql.createConnection(config);
 
     connection.connect();
 
     var sql = `insert into society_accounts (ACCOUNT_CODE,SID,ACCOUNT_NAME,TOTAL_AMOUNT,ACCOUNT_CREATION_DATE) values (?,?,?,?,?);`;
 
-    var param = [societyAccountDetails.ACCOUNT_CODE, societyDetails1.SID ,societyAccountDetails.ACCOUNT_NAME , societyAccountDetails.TOTAL_AMOUNT , societyAccountDetails.ACCOUNT_CREATION_DATE];
+    var param = [societyAccountDetails.ACCOUNT_CODE, societyDetails1.SID, societyAccountDetails.ACCOUNT_NAME, societyAccountDetails.TOTAL_AMOUNT, societyAccountDetails.ACCOUNT_CREATION_DATE];
 
-    connection.query(sql,param, function (err, data) {
+    connection.query(sql, param, function (err, data) {
 
         if (err) {
             console.log(err);
@@ -364,6 +387,96 @@ ref.addSocietyAccount1 = function(societyAccountDetails,callback){
         }
         connection.end();
     });
+}
+//--to get society account details
+
+ref.getSocietyAccountData1 = function (SocietyVoucherData, callback) {
+
+    var connection = mysql.createConnection(config);
+
+    connection.connect();
+
+    var sql = `SELECT * FROM society_accounts WHERE SID = ? and ACCOUNT_CODE=?`;
+
+    var param = [societyDetails1.SID, SocietyVoucherData.ACCOUNT_CODE];
+
+    connection.query(sql, param, function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+}
+
+ref.insertVoucherData1 = function (SocietyVoucherData, callback) {
+    var connection = mysql.createConnection(config);
+
+    connection.connect();
+
+    var sql = `insert into society_expences (VOUCHER_NO,VOUCHER_DATE,PAY_TO,CHEQUE_NO,PARTICULAR,AMOUNT,SID) values (?,?,?,?,?,?,?);`;
+
+    var param = [SocietyVoucherData.VOUCHER_NO, SocietyVoucherData.VOUCHER_DATE, SocietyVoucherData.PAY_TO, SocietyVoucherData.CHEQUE_NO, SocietyVoucherData.PARTICULAR, SocietyVoucherData.AMOUNT, societyDetails1.SID];
+
+    connection.query(sql, param, function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+
+}
+// -- get Account BALANCE --  //
+
+ref.getBalanceOfBankAccount = function (callback) {
+    var connection = mysql.createConnection(config);
+
+    connection.connect();
+
+    var sql = `select * from society_accounts where ACCOUNT_CODE = 222;`;
+
+    connection.query(sql, function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+}
+
+ref.updateBankAccountBalance = function(SocietyVoucherData, callback){
+
+    var connection = mysql.createConnection(config);
+
+    connection.connect();
+
+    var sql = `update society_accounts
+                set TOTAL_AMOUNT = TOTAL_AMOUNT - ?
+                where SID = ? and ACCOUNT_CODE = ?;`;
+
+    var param = [SocietyVoucherData.AMOUNT, societyDetails1.SID ,SocietyVoucherData.ACCOUNT_CODE];
+
+    connection.query(sql, param, function (err, data) {
+
+        if (err) {
+            console.log(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+
 }
 
 module.exports = ref;
