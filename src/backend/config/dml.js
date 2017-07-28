@@ -78,6 +78,20 @@ dml.tableDefination = [{
                 ACCOUNT_CREATION_DATE DATE NOT NULL,
                 foreign key (SID) references SOCIETY(SID)
 )`
+},{
+    "tablename": "SOCIETY_EXPENCES",
+    "sql": `CREATE TABLE IF NOT EXISTS SOCIETY_EXPENCES(
+	            VOUCHER_NO INT(10) PRIMARY KEY AUTO_INCREMENT,
+                ACCOUNT_CODE INT(10),
+                ACCOUNT_NAME VARCHAR(30),
+	            VOUCHER_DATE DATE,
+	            PAY_TO VARCHAR(100),
+                CHEQUE_NO INT(10),
+                PARTICULAR VARCHAR(255),
+                AMOUNT DOUBLE(7,2),
+                SID INT(20),
+                foreign key (SID) references SOCIETY(SID)
+            )`
 }
 ];
 

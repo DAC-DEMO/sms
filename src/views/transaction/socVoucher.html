@@ -1,21 +1,21 @@
-<div class="container" >
+<div class="container" ng-controller="socVoucher">
     <table class="table table-striped  table-hover jumbotron">
         <tbody>
             <tr class="success">
                 <td>Payment VoucherNo:</td>
-                <td><input type="text"></td>
+                <td><input type="text" ng-model="SocietyVoucherData.VOUCHER_NO"></td>
                 <td>Date:</td>
-                <td><input type="date"></td>
+                <td><input type="date" ng-model="SocietyVoucherData.VOUCHER_DATE"></td>
             </tr>
             <tr class="success">
                 <td>Pay To:</td>
-                <td><textarea class="form-control"></textarea> </td>
+                <td><textarea class="form-control" ng-model="SocietyVoucherData.PAY_TO"></textarea> </td>
                 <td></td>
                 <td></td>
             </tr>
             <tr class="success">
                 <td>Cheque Details (Cheque No.) :</td>
-                <td><input type="text"></td>
+                <td><input type="text" ng-model="SocietyVoucherData.CHEQUE_NO"></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -27,21 +27,21 @@
         <tbody>
             <tr class="Info">
                 <td>Account Code:</td>
-                <td><input type="number"><button class="btn btn-primary btn-md" style="margin-left: 5px;">Generate</button></td>
+                <td><input type="number" ng-model="SocietyVoucherData.ACCOUNT_CODE"><button class="btn btn-primary btn-md" style="margin-left: 5px;">Search</button></td>
             </tr>
             <tr class="Info">
                 <td>Name:</td>
-                <td><input type="text"></td>
+                <td><input type="text" ng-model="SocietyVoucherData.ACCOUNT_NAME"></td>
             </tr>
             <tr class="Info">
                 <td>Amount:</td>
-                <td><input type="number"></td>
+                <td><input type="number" ng-model="SocietyVoucherData.AMOUNT"></td>
             </tr>
 
             <tr class="Info">
                 <td>Particular:</td>
                 <td>
-                    <textarea class="form-control" style="width: 50%"></textarea>
+                    <textarea class="form-control" style="width: 50%" ng-model="SocietyVoucherData.PARTICULAR"></textarea>
                 </td>
             </tr>
             <tr>
