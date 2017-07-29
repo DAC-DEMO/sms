@@ -17,7 +17,7 @@ ref.dbInsertSociety1 = function (socFormData, callback) {
 
     connection.connect();
 
-    var sql = `insert into society (name,regno,address) values(?,?,?)`;
+    var sql = `insert into society (name,regno,address,CTIME) values(?,?,?,sysdate())`;
 
     var param = [socFormData.societyName, socFormData.regnNo, socFormData.address];
 
