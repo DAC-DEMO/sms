@@ -479,4 +479,27 @@ ref.updateBankAccountBalance = function(SocietyVoucherData, callback){
 
 }
 
+//--- login validation ---//
+
+
+ref.checkLogin = function(logindata,callback){
+    var connection = mysql.createConnection(config);
+
+    connection.connect();
+
+    var sql = `select * from user where username= ? and password=?`;
+
+    var param = [logindata.username, logindata.password];
+
+    connection.query(sql, param, function (err, data) {
+
+        if (err) {
+            callback(err);
+        }
+        else {
+            callback(data);
+        }
+        connection.end();
+    });
+}
 module.exports = ref;
